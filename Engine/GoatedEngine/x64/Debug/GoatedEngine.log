@@ -1,2 +1,5 @@
-﻿  App.cpp
+﻿  Precompiled.cpp
+  App.cpp
+  GoatedEngine.cpp
+  Generating Code...
   GoatedEngine.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\GoatedEngine.lib

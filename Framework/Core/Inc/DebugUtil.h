@@ -19,7 +19,8 @@ using namespace GoatedEngine::Core;
 		{\
 			LOG("ASSERT: %s(%d)/n"##format##, __FILE__, __LINE__, __VA_ARGS__);\
 			DebugBreak();\
-		}while(false)
+		}\
+	} while (false)
 #else
 #define LOG(format, ...) 
 #define ASSERT(condition, format, ...) do{(void)sizeof(condition);} while(false)
