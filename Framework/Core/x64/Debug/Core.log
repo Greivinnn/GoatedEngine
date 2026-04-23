@@ -1,4 +1,2 @@
 ﻿  WindowMessageHandler.cpp
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Core\Src\WindowMessageHandler.cpp(23,1): error C1075: '{': no matching token found
-  (compiling source file '/Src/WindowMessageHandler.cpp')
-  
+  Core.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Core.lib
