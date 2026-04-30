@@ -1,6 +1,8 @@
 #pragma once
+#include "Color.h"
 
-namespace GoatedEngine
+
+namespace GoatedEngine::Graphics
 {
 	class GraphicSystem final
 	{
@@ -12,7 +14,7 @@ namespace GoatedEngine
 
 		//file code
 		GraphicSystem() = default;
-		~GraphicSystem() = default;
+		~GraphicSystem();
 		GraphicSystem(const GraphicSystem&) = delete;
 		GraphicSystem(const GraphicSystem&&) = delete;
 		GraphicSystem& operator=(const GraphicSystem&) = delete;
@@ -30,8 +32,8 @@ namespace GoatedEngine
 		void ResetRenderTarget();
 		void ResetViewport();
 
-		// void SetClearColor();
-		void SetVSync();
+		void SetClearColor(const Color& color);
+		void SetVSync(bool vSync);
 
 		uint32_t GetBackBufferWidth() const;
 		uint32_t GetBackBufferHeight() const;
@@ -54,7 +56,7 @@ namespace GoatedEngine
 		DXGI_SWAP_CHAIN_DESC mSwapChainDesc{};
 		D3D11_VIEWPORT mViewport{};
 
-		// Color mClearColor = Colors::Black;
+		Color mClearColor = Colors::Black;
 		UINT mVsync = 1;
 	};
 }

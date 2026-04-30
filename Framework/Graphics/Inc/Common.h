@@ -1,5 +1,6 @@
 #pragma once
 #include <Core/Inc/Core.h>
+#include <Math/Inc/GMath.h>
 
 // directx11 
 #include <d3d11_1.h>

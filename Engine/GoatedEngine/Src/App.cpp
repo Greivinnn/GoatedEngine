@@ -5,6 +5,7 @@
 using namespace GoatedEngine;
 using namespace GoatedEngine::Core;
 using namespace GoatedEngine::Input;	
+using namespace GoatedEngine::Graphics;
 
 void App::Run(const AppConfig& config)
 {
@@ -17,6 +18,8 @@ void App::Run(const AppConfig& config)
 
 	auto handle = myWindow.GetWindowHandle();
 	InputSystem::StaticInitialize(handle);
+	GraphicSystem::StaticInitialize(handle, config.fullscreen);
+
 
 	// after initializing singletons, initialize current state
 	ASSERT(mCurrentState != nullptr, "App: No state added to the app");
@@ -51,6 +54,10 @@ void App::Run(const AppConfig& config)
 		mCurrentState->Update(deltaTime);
 
 		// render flow 
+		GraphicSystem* gs = GraphicSystem::Get();
+		gs->BeginRender();
+		mCurrentState->Render();
+		gs->EndRender();
 	}
 	// terminate activee state first
 	mCurrentState->Terminate();

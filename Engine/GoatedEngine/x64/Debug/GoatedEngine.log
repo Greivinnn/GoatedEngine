@@ -1,1 +1,23 @@
-﻿  GoatedEngine.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\GoatedEngine.lib
+﻿  Precompiled.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file 'Src/Precompiled.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file 'Src/Precompiled.cpp')
+  
+  App.cpp
+  GoatedEngine.cpp
+  Generating Code...
+  GoatedEngine.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\GoatedEngine.lib
