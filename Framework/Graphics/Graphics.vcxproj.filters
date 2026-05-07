@@ -24,12 +24,33 @@
     <ClInclude Include="Inc\Color.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\VertexTypes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\VertexShader.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\PixelShader.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\MeshBuffer.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\Precompiled.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\GraphicSystem.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\VertexShader.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\PixelShader.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\MeshBuffer.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
   </ItemGroup>

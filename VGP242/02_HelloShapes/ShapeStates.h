@@ -12,15 +12,19 @@ public:
 protected:
 	virtual void CreateShapes();
 
-	struct Vertex
-	{
-		GoatedEngine::Math::Vector3 position;
-	};
-	using Vertices = std::vector<Vertex>;
+	using Vertices = std::vector<GoatedEngine::Graphics::VertexPC>;
 	Vertices mVertices;
 
-	ID3D11Buffer* mVertexBuffer = nullptr;
-	ID3D11VertexShader* mVertexShader = nullptr;
-	ID3D11InputLayout* mInputLayout = nullptr;
-	ID3D11PixelShader* mPixelShader = nullptr;
+	GoatedEngine::Graphics::MeshBuffer mMeshBuffer;
+	GoatedEngine::Graphics::VertexShader mVertexShader;
+	GoatedEngine::Graphics::PixelShader mPixelShader;
+
+};
+
+class QuadState : public ShapeStates
+{
+public:
+	void Update(float deltaTime);
+protected:
+	void CreateShapes() override;
 };

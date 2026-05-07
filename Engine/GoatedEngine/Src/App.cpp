@@ -62,6 +62,7 @@ void App::Run(const AppConfig& config)
 	// terminate activee state first
 	mCurrentState->Terminate();
 	InputSystem::StaticTerminate();
+	GraphicSystem::StaticTerminate();
 	myWindow.Terminate();
 	// close the application
 	LOG("App Ended");

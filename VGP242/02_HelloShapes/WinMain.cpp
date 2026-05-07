@@ -8,7 +8,9 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int)
 
 	GoatedEngine::App& myApp = GoatedEngine::MainApp();
 	myApp.AddState<ShapeStates>("ShapeState");
+	myApp.AddState<QuadState>("QuadState");
 	myApp.Run(config);
+	
 
 	return 0;
 }

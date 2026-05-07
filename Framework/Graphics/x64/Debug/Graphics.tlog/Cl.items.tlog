@@ -1,2 +1,5 @@
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\GraphicSystem.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\GraphicSystem.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuffer.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\MeshBuffer.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\PixelShader.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\PixelShader.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Precompiled.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Precompiled.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\VertexShader.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\VertexShader.obj

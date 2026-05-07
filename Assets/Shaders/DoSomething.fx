@@ -9,7 +9,7 @@ struct VS_INPUT
 // output f16tof32 Vertex function that GetRenderTargetSampleCount interpolated through the rasterizer abd used countbits pixel function
 struct VS_OUTPUT
 {
-    float4 position : SV_POSITION;
+    float4 position : SV_Position;
 };
 
 VS_OUTPUT VS(VS_INPUT input)
@@ -20,7 +20,7 @@ VS_OUTPUT VS(VS_INPUT input)
     return output;
 }
 
-float4 PS(VS_OUTPUT input) : SV_TARGET
+float4 PS(VS_OUTPUT input) : SV_Target
 {
     // output yellow color
     return float4(1, 1, 0, 1);

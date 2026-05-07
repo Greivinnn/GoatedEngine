@@ -2,47 +2,63 @@
 
 using namespace GoatedEngine;
 using namespace GoatedEngine::Graphics;
+using namespace GoatedEngine::Input;
 
 void ShapeStates::Initialize()
 {
-	CreateShapes();	
+	CreateShapes();
+	
+	mMeshBuffer.Initialize(mVertices.data(), sizeof(VertexPC), mVertices.size());
 
-	auto device = GraphicSystem::Get()->GetDevice();
-
-	D3D11_BUFFER_DESC bufferDesc{};
-	bufferDesc.ByteWidth = static_cast<UINT>(sizeof(Vertex) * mVertices.size());
-	bufferDesc.Usage = D3D11_USAGE_IMMUTABLE;
-	bufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	bufferDesc.MiscFlags = 0;
-	bufferDesc.StructureByteStride = 0;
-
-	D3D11_SUBRESOURCE_DATA initData{};
-	initData.pSysMem = mVertices.data();
-
-	HRESULT hr = device->CreateBuffer(&bufferDesc, &initData, &mVertexBuffer);
-
-	ASSERT(SUCCEEDED(hr), "MeshBuffer: Failed to create vertex buffer.");
-
-	std::filesystem::path shaderFile = L"../../Assets/Shaders/DoSomething.fx";
+	std::filesystem::path shaderPath = L"../../Assets/Shaders/DoColor.fx";
+	mVertexShader.Initialize<VertexPC>(shaderPath);
+	mPixelShader.Initialize(shaderPath);
 }
 
 void ShapeStates::Terminate()
 {
+	mVertices.clear();
+	mPixelShader.Terminate();
+	mVertexShader.Terminate();
+	mMeshBuffer.Terminate();
 }
 
 void ShapeStates::Update(float deltaTime)
 {
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::UP))
+	{
+		MainApp().ChangeState("QuadState");
+	}
 }
 
 void ShapeStates::Render()
 {
+	mVertexShader.Bind();
+	mPixelShader.Bind();
+	mMeshBuffer.Render();
 }
 
 void ShapeStates::CreateShapes()
 {
-	mVertices.push_back({ { -0.5f, -0.5f, 0.0f } });
-	mVertices.push_back({ { 0.0f, 0.5f, 0.0f } });
-	mVertices.push_back({ { 0.5f, -0.5f, 0.0f } });
+	mVertices.push_back({ {-0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {0.5,  0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+}
 
+void QuadState::Update(float deltaTime)
+{
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
+	{
+		MainApp().ChangeState("ShapeState");
+	}
+}
+void QuadState::CreateShapes()
+{
+	mVertices.push_back({ {-0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {-0.5, 0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {0.5, 0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
 
+	mVertices.push_back({ {-0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {0.5, 0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
 }

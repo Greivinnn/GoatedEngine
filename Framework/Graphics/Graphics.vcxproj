@@ -135,13 +135,20 @@
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\Graphics.h" />
     <ClInclude Include="Inc\GraphicSystem.h" />
+    <ClInclude Include="Inc\MeshBuffer.h" />
+    <ClInclude Include="Inc\PixelShader.h" />
+    <ClInclude Include="Inc\VertexShader.h" />
+    <ClInclude Include="Inc\VertexTypes.h" />
     <ClInclude Include="Scr\Precompiled.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\GraphicSystem.cpp" />
+    <ClCompile Include="Scr\MeshBuffer.cpp" />
+    <ClCompile Include="Scr\PixelShader.cpp" />
     <ClCompile Include="Scr\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Scr\VertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\External\DirectXTK\DirectXTK_Desktop_2022.vcxproj">
