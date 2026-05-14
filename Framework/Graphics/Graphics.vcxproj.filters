@@ -36,6 +36,12 @@
     <ClInclude Include="Inc\MeshBuffer.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Camera.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ContantBuffer.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\Precompiled.cpp">
@@ -51,6 +57,12 @@
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\MeshBuffer.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\Camera.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\ContantBuffer.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
   </ItemGroup>

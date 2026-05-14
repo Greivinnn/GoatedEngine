@@ -101,26 +101,22 @@ void HouseState::CreateShapes()
 
 void LogoState::CreateShapes()
 {
-	// Top triangle
-	mVertices.push_back({ { 0.0f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ {-0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ { 0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	// First Traingle
+	mVertices.push_back({ {0.0f, 0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red  } });
+	mVertices.push_back({ {-0.5f,  -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red } });
 
-	// Bottom triangle
-	mVertices.push_back({ { 0.0f, -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ {-0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ { 0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	// Second Triangle
+	mVertices.push_back({ {0.0f, 0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red  } });
+	mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { -0.5f, 0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red } });
 
-	// Left triangle
-	mVertices.push_back({ {-0.5f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ { 0.0f, -0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ { 0.0f,  0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-
-	// Right triangle
-	mVertices.push_back({ { 0.5f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ { 0.0f, -0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
-	mVertices.push_back({ { 0.0f,  0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	// Third Triangle
+	mVertices.push_back({ {0.0f, 0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red  } });
+	mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.5f,  -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red } });
 }
+
 
 
 
