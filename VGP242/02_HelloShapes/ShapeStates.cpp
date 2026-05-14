@@ -27,6 +27,15 @@ void ShapeStates::Update(float deltaTime)
 {
 	if (InputSystem::Get()->IsKeyPressed(KeyCode::UP))
 	{
+		MainApp().ChangeState("HouseState");
+	}
+
+}
+
+void HouseState::Update(float deltaTime)
+{
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
+	{
 		MainApp().ChangeState("QuadState");
 	}
 }
@@ -49,9 +58,18 @@ void QuadState::Update(float deltaTime)
 {
 	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
 	{
+		MainApp().ChangeState("LogoState");
+	}
+}
+
+void LogoState::Update(float deltaTime)
+{
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
+	{
 		MainApp().ChangeState("ShapeState");
 	}
 }
+
 void QuadState::CreateShapes()
 {
 	mVertices.push_back({ {-0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
@@ -62,3 +80,47 @@ void QuadState::CreateShapes()
 	mVertices.push_back({ {0.5, 0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
 	mVertices.push_back({ {0.5, -0.5, 0.0,}, {GoatedEngine::Graphics::Colors::Red} });
 }
+
+void HouseState::CreateShapes()
+{
+	// First Traingle
+	mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red  } });
+	mVertices.push_back({ {-0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red } });
+
+	// Second Triangle
+	mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red  } });
+	mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.5f, -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red } });
+
+	// Third Triangle
+	mVertices.push_back({ {-0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red  } });
+	mVertices.push_back({ { 0.0f,  1.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red } });
+}
+
+void LogoState::CreateShapes()
+{
+	// Top triangle
+	mVertices.push_back({ { 0.0f,  0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {-0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+
+	// Bottom triangle
+	mVertices.push_back({ { 0.0f, -0.5f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ {-0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.2f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+
+	// Left triangle
+	mVertices.push_back({ {-0.5f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.0f, -0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.0f,  0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+
+	// Right triangle
+	mVertices.push_back({ { 0.5f,  0.0f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.0f, -0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+	mVertices.push_back({ { 0.0f,  0.2f, 0.0f}, {GoatedEngine::Graphics::Colors::Red} });
+}
+
+
+

@@ -28,3 +28,19 @@ public:
 protected:
 	void CreateShapes() override;
 };
+
+class HouseState : public ShapeStates
+{
+public:
+	void Update(float deltaTime) override;
+protected:
+	void CreateShapes() override;
+};
+
+class LogoState : public ShapeStates
+{
+public:
+	void Update(float deltaTime) override;
+protected:
+	void CreateShapes() override;
+};
