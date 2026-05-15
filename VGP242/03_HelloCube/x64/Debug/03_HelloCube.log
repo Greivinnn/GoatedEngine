@@ -19,4 +19,25 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning
   
 C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\03_HelloCube\ShapeStates.cpp(14,78): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
 C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\03_HelloCube\ShapeStates.cpp(34,29): warning C4305: 'initializing': truncation from 'double' to 'float'
+  WinMain.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+  Generating Code...
+  LINK : C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\03_HelloCube.exe not found or not built by the last incremental link; performing full link
   03_HelloCube.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\03_HelloCube.exe
