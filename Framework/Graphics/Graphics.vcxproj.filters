@@ -42,6 +42,12 @@
     <ClInclude Include="Inc\ContantBuffer.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\MeshType.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\MeshBuilder.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\Precompiled.cpp">
@@ -63,6 +69,9 @@
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\ContantBuffer.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\MeshBuilder.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
   </ItemGroup>

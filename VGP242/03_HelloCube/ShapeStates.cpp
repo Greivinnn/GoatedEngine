@@ -75,56 +75,56 @@ void ShapeStates::CreateShapes()
 {
 	// Front
 	mVertices.push_back({ {-0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ { 0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Green } });
-	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ { 0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
+	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 
 	mVertices.push_back({ {-0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ {-0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ { 0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ {-0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
+	mVertices.push_back({ { 0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 
 	// Back
-	mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ { 0.5f, -0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 	mVertices.push_back({ { 0.5f,  0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ {-0.5f, -0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ {-0.5f, -0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 
-	mVertices.push_back({ {-0.5f, -0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ {-0.5f, -0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 	mVertices.push_back({ { 0.5f,  0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ {-0.5f,  0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ {-0.5f,  0.5f, 0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 
 	// Right
-	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 	mVertices.push_back({ { 0.5f,  0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ { 0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ { 0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 
-	mVertices.push_back({ { 0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ { 0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 	mVertices.push_back({ { 0.5f,  0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 
 	// Left
-	mVertices.push_back({ {-0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ {-0.5f,  0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ {-0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
+	mVertices.push_back({ {-0.5f,  0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 	mVertices.push_back({ {-0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Red } });
 
-	mVertices.push_back({ {-0.5f,  0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Green } });
-	mVertices.push_back({ {-0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ {-0.5f,  0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
+	mVertices.push_back({ {-0.5f,  0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 	mVertices.push_back({ {-0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Red } });
 
 	// Top
-	mVertices.push_back({ {-0.5f, 0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ {-0.5f, 0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 	mVertices.push_back({ { 0.5f, 0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Red } });
-	mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ { 0.5f, 0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 
-	mVertices.push_back({ {-0.5f, 0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ {-0.5f, 0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ {-0.5f, 0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
+	mVertices.push_back({ {-0.5f, 0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 	mVertices.push_back({ { 0.5f, 0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Red } });
 
 	// Bottom
-	mVertices.push_back({ {-0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ { 0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Green } });
+	mVertices.push_back({ {-0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
+	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
+	mVertices.push_back({ { 0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Purple } });
 
-	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ {-0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Blue } });
+	mVertices.push_back({ { 0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
+	mVertices.push_back({ {-0.5f, -0.5f,  0.5f }, { GoatedEngine::Graphics::Colors::Pink } });
 	mVertices.push_back({ {-0.5f, -0.5f, -0.5f }, { GoatedEngine::Graphics::Colors::Red } });
 }
 

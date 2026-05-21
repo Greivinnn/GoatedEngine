@@ -8,3 +8,5 @@
 #include "MeshBuffer.h"
 #include "Camera.h"
 #include "ContantBuffer.h"
+#include "MeshType.h"
+#include "MeshBuilder.h"
