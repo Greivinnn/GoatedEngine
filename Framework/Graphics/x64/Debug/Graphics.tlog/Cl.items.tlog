@@ -5,4 +5,7 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuffer.cpp;C:\LAS
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\MeshBuilder.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\PixelShader.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\PixelShader.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Precompiled.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Precompiled.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Sampler.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Sampler.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Texture.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Texture.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\TextureManager.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\TextureManager.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\VertexShader.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\VertexShader.obj

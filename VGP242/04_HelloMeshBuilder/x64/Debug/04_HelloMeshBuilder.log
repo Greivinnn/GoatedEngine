@@ -1,1 +1,20 @@
-﻿  04_HelloMeshBuilder.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\04_HelloMeshBuilder.exe
+﻿  ShapeStates.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file 'ShapeStates.cpp')
+  
+  04_HelloMeshBuilder.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\04_HelloMeshBuilder.exe

@@ -10,3 +10,6 @@
 #include "ContantBuffer.h"
 #include "MeshType.h"
 #include "MeshBuilder.h"
+#include "Texture.h"
+#include "TextureManager.h"
+#include "Sampler.h"
