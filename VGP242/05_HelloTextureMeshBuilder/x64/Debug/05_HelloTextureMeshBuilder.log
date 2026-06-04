@@ -1,1 +1,40 @@
-﻿  05_HelloTextureMeshBuilder.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\05_HelloTextureMeshBuilder.exe
+﻿  ShapeStates.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/ShapeStates.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/ShapeStates.cpp')
+  
+  WinMain.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file '../05_HelloTextureMeshBuilder/WinMain.cpp')
+  
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib'

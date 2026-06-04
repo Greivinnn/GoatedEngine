@@ -1,21 +1,41 @@
 ﻿  ShapeStates.cpp
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
-  (compiling source file 'ShapeStates.cpp')
+  (compiling source file '../02_HelloShapes/ShapeStates.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
-  (compiling source file 'ShapeStates.cpp')
+  (compiling source file '../02_HelloShapes/ShapeStates.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
-  (compiling source file 'ShapeStates.cpp')
+  (compiling source file '../02_HelloShapes/ShapeStates.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
-  (compiling source file 'ShapeStates.cpp')
+  (compiling source file '../02_HelloShapes/ShapeStates.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
-  (compiling source file 'ShapeStates.cpp')
+  (compiling source file '../02_HelloShapes/ShapeStates.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
-  (compiling source file 'ShapeStates.cpp')
+  (compiling source file '../02_HelloShapes/ShapeStates.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\02_HelloShapes\ShapeStates.cpp(11,75): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-  02_HelloShapes.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\02_HelloShapes.exe
+  WinMain.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file '../02_HelloShapes/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file '../02_HelloShapes/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file '../02_HelloShapes/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file '../02_HelloShapes/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file '../02_HelloShapes/WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file '../02_HelloShapes/WinMain.cpp')
+  
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib'

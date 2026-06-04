@@ -135,6 +135,7 @@
     <ClInclude Include="Inc\Color.h" />
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\ContantBuffer.h" />
+    <ClInclude Include="Inc\DebugUI.h" />
     <ClInclude Include="Inc\Graphics.h" />
     <ClInclude Include="Inc\GraphicSystem.h" />
     <ClInclude Include="Inc\MeshBuffer.h" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Inc\MeshType.h" />
     <ClInclude Include="Inc\PixelShader.h" />
     <ClInclude Include="Inc\Sampler.h" />
+    <ClInclude Include="Inc\SimpleDraw.h" />
     <ClInclude Include="Inc\Texture.h" />
     <ClInclude Include="Inc\TextureManager.h" />
     <ClInclude Include="Inc\VertexShader.h" />
@@ -151,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Scr\Camera.cpp" />
     <ClCompile Include="Scr\ContantBuffer.cpp" />
+    <ClCompile Include="Scr\DebugUI.cpp" />
     <ClCompile Include="Scr\GraphicSystem.cpp" />
     <ClCompile Include="Scr\MeshBuffer.cpp" />
     <ClCompile Include="Scr\MeshBuilder.cpp" />
@@ -159,6 +162,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Scr\Sampler.cpp" />
+    <ClCompile Include="Scr\SimpleDraw.cpp" />
     <ClCompile Include="Scr\Texture.cpp" />
     <ClCompile Include="Scr\TextureManager.cpp" />
     <ClCompile Include="Scr\VertexShader.cpp" />
@@ -166,6 +170,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\External\DirectXTK\DirectXTK_Desktop_2022.vcxproj">
       <Project>{e0b52ae7-e160-4d32-bf3f-910b785e5a8e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\ImGui\ImGui.vcxproj">
+      <Project>{52d656a2-a2f4-4c54-a3c7-653427bed1e8}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Core\Core.vcxproj">
       <Project>{bc71bb36-b58b-4660-a4da-c0a0354c2c73}</Project>

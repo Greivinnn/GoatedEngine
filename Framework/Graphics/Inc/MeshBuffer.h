@@ -25,6 +25,7 @@ namespace GoatedEngine::Graphics
 		void Initialize(const void* vertices, uint32_t vertexSize, uint32_t vertexCount, const void* indices, uint32_t indexCount);
 		void Terminate();
 
+		void Update(const void* vertices, uint32_t vertexCount);
 		void SetTopology(Topology topology);
 		void Render() const;
 	private:

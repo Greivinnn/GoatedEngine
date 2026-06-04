@@ -10,7 +10,6 @@ namespace GoatedEngine::Graphics
 		// cube
 		static MeshPC CreateVertexCubePC(float size, const Color& color);
 		static MeshPC CreateCubePC(float size);
-
 		static MeshPX CreateCubePX(float size);
 
 		// rectangle
@@ -20,13 +19,17 @@ namespace GoatedEngine::Graphics
 		static MeshPC CreatePyramidPC(float size);
 
 		// plane
-		static MeshPC CreatePlanePC(int numRows, int numColumns, int spacing, bool horizontal);
-		static MeshPX CreatePlanePX(int numRows, int numColumns, int spacing, bool horizontal);
+		static MeshPC CreatePlanePC(int numRows, int numColumns, float spacing, bool horizontal = true);
+		static MeshPX CreatePlanePX(int numRows, int numColumns, float spacing, bool horizontal = true);
 
 		// cylinder
 		static MeshPC CreateCylinderPC(int slices, int rings);
 
 		// sphere
 		static MeshPC CreateSpherePC(int slices, int rings, float radius);
+		static MeshPX CreateSpherePX(int slices, int rings, float radius);
+
+		// skt sphere
+		static MeshPX CreateSkySpherePX(int slices, int rings, float radius);
 	};
 }

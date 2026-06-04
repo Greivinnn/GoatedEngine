@@ -20,6 +20,8 @@ void App::Run(const AppConfig& config)
 	InputSystem::StaticInitialize(handle);
 	GraphicSystem::StaticInitialize(handle, config.fullscreen);
 	TextureManager::StaticInitialize(L"../../Assets/Textures");
+	DebugUI::StaticInitialize(handle, false, true);
+	SimpleDraw::StaticInitialize(config.maxVertexCount);
 
 	// after initializing singletons, initialize current state
 	ASSERT(mCurrentState != nullptr, "App: No state added to the app");
@@ -57,10 +59,15 @@ void App::Run(const AppConfig& config)
 		GraphicSystem* gs = GraphicSystem::Get();
 		gs->BeginRender();
 		mCurrentState->Render();
+		DebugUI::BeginDraw();
+		mCurrentState->DebugUI();
+		DebugUI::EndDraw();
 		gs->EndRender();
 	}
 	// terminate activee state first
 	mCurrentState->Terminate();
+	DebugUI::StaticTerminate();
+	SimpleDraw::StaticTerminate();
 	TextureManager::StaticTerminate();
 	InputSystem::StaticTerminate();
 	GraphicSystem::StaticTerminate();

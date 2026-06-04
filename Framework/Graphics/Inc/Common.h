@@ -2,6 +2,8 @@
 #include <Core/Inc/Core.h>
 #include <Math/Inc/GMath.h>
 
+#include <ImGui/Inc/imgui.h>
+
 // directx11 
 #include <d3d11_1.h>
 #include <d3dcompiler.h>
