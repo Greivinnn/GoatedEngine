@@ -19,24 +19,62 @@ void GameState::Update(float deltaTime)
 	UpdateCamera(deltaTime);
 }
 
+enum class Shape
+{
+	None,
+	AABB,
+	AABBFilled,
+	Sphere,
+	GroundPlane,
+	GroundCircle,
+	Transform
+};
+
+const char* gShapenames[] =
+{
+	"None",
+	"AABB",
+	"AABBFilled",
+	"Sphere",
+	"GroundPlane",
+	"GroundCircle",
+	"Transform"
+};
+
+Shape gCurrentShape = Shape::None;
+Color gShapeColor = Colors::White;
+float gPlaneSize = 10.0f;
+
+
 void GameState::Render()
 {
+	switch (gCurrentShape)
+	{
+	case Shape::None: break;
+	case Shape::GroundPlane:
+	{
+		SimpleDraw::AddGroundPlane(gPlaneSize, gShapeColor);
+	}
+	break;
+	default:
+		break;
+	}
+	SimpleDraw::Render(mCamera);
 }
 
 float myVariable = 0.0f;
 void GameState::DebugUI()
 {
 	ImGui::Begin("Debug", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
-	ImGui::Text("JP + Fredo <3");
-	if (ImGui::DragFloat("MyVariable", &myVariable))
-	{
-		LOG("MY VARIABLE UPDATED: %f", myVariable);
-	}
-	if (ImGui::Button("MyButton"))
-	{
-		myVariable = 0.0f;
-		LOG("BUTTON PRESSED");
-	}
+	
+		ImGui::ColorEdit4("ShapeColor", &gShapeColor.r);
+		int currentShape = (int)gCurrentShape;
+		if(ImGui::Combo("Shape", &currentShape, gShapenames, std::size(gShapenames)))
+		{
+			gCurrentShape = (Shape)currentShape;
+		}
+
+		ImGui::DragFloat("PlaneSize", &gPlaneSize, 1.0f, 1.0f, 10000.0f);
 	ImGui::End();
 }
 

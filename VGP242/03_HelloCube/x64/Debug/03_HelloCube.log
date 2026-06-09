@@ -39,4 +39,6 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning
   (compiling source file 'WinMain.cpp')
   
   Generating Code...
-LINK : fatal error LNK1104: cannot open file 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib'
+DirectXTK.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(WICTextureLoader.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
+DirectXTK.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(pch.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
+  03_HelloCube.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\03_HelloCube.exe

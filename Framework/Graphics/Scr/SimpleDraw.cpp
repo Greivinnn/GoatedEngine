@@ -8,7 +8,6 @@
 #include "PixelShader.h"
 #include "VertexShader.h"
 #include "VertexTypes.h"
-#include "SimpleDraw.h"
 
 using namespace GoatedEngine;
 using namespace GoatedEngine::Graphics;

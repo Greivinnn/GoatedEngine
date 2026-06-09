@@ -66,8 +66,8 @@ void App::Run(const AppConfig& config)
 	}
 	// terminate activee state first
 	mCurrentState->Terminate();
-	DebugUI::StaticTerminate();
 	SimpleDraw::StaticTerminate();
+	DebugUI::StaticTerminate();
 	TextureManager::StaticTerminate();
 	InputSystem::StaticTerminate();
 	GraphicSystem::StaticTerminate();
