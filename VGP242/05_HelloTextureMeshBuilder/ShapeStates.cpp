@@ -76,6 +76,7 @@ void ShapeStates::Render()
 
 	// sync buffer information
 	mConstantBuffer.BindVS(0);
+	mSampler.BindPS(0);
 
 	// update buffer data
 	Math::Matrix4 matWorld = Math::Matrix4::Identity;
@@ -84,7 +85,6 @@ void ShapeStates::Render()
 	Math::Matrix4 wvp = matWorld * matView * matProj;
 	wvp = Math::Transpose(wvp);
 	mConstantBuffer.Update(&wvp);
-	mSampler.BindPS(0);
 
 	TextureManager::Get()->BindPS(mTextureId, 0);
 	// render object

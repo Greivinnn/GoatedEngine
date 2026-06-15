@@ -3,109 +3,304 @@
 using namespace GoatedEngine;
 using namespace GoatedEngine::Graphics;
 using namespace GoatedEngine::Input;
+using namespace GoatedEngine::Math;
+
+namespace
+{
+	// Path to the texture (jpg) for each body. TODO: replace pathText with real paths
+	// e.g. "planet/earth.jpg"
+	constexpr const char* pathText = "planets/pluto.jpg";
+
+	// shader file - update to wherever DoTexture.fx lives in your project
+	constexpr const char* kShaderPath = "../../Assets/Shaders/DoTexture.fx";
+
+	// Real average orbital periods (Earth years) and rotation periods (Earth days),
+	// scaled down so the demo is actually watchable.
+	// orbitSpeed  = base angular speed around the sun (rad/sec)
+	// rotationSpeed = base angular speed of self spin (rad/sec)
+	struct PlanetData
+	{
+		const char* name;
+		const char* texture;
+		float orbitRadius;
+		float orbitSpeed;
+		float rotationSpeed;
+		float scale;
+	};
+
+	const PlanetData kPlanetData[] =
+	{
+		{ "Mercury", "planets/mercury.jpg",  4.0f, 0.80f, 0.50f, 0.30f },
+		{ "Venus",   "planets/venus.jpg",    6.0f, 0.60f, 0.30f, 0.45f },
+		{ "Earth",   "planets/earth.jpg",    8.0f, 0.50f, 1.00f, 0.50f },
+		{ "Mars",    "planets/mars.jpg",    10.0f, 0.40f, 0.90f, 0.40f },
+		{ "Jupiter", "planets/jupiter.jpg", 14.0f, 0.22f, 2.00f, 1.40f },
+		{ "Saturn",  "planets/saturn.jpg",  18.0f, 0.18f, 1.80f, 1.20f },
+		{ "Uranus",  "planets/uranus.jpg",  22.0f, 0.14f, 1.20f, 0.90f },
+		{ "Neptune", "planets/neptune.jpg", 26.0f, 0.10f, 1.10f, 0.85f },
+		{ "Pluto",   "planets/pluto.jpg",   30.0f, 0.08f, 0.40f, 0.20f }
+	};
+
+	constexpr int kEarthIndex = 2; // index of Earth in kPlanetData / mPlanets
+}
 
 void GameState::Initialize()
 {
-	mCamera.SetPosition({ 0.0f, 1.0f, -3.0f });
+	mCamera.SetPosition({ 0.0f, 5.0f, -20.0f });
 	mCamera.SetLookAt({ 0.0f, 0.0f, 0.0f });
+
+	// === Shared shader / sampler / constant buffer (reused for every object) ===
+	mVertexShader.Initialize<VertexPX>(kShaderPath);
+	mPixelShader.Initialize(kShaderPath);
+	mConstantBuffer.Initialize(sizeof(TransformBuffer));
+	mSampler.Initialize(Sampler::Filter::Linear, Sampler::AddressMode::Wrap);
+
+	// === Sky sphere ===
+	MeshPX skyMesh = MeshBuilder::CreateSkySpherePX(32, 16, 500.0f);
+	mSkyMeshBuffer.Initialize(skyMesh);
+	mSkyTextureId = TextureManager::Get()->LoadTexture(pathText);
+
+	// === Sun ===
+	{
+		MeshPX sunMesh = MeshBuilder::CreateSpherePX(32, 16, 1.0f);
+		mSun.meshBuffer.Initialize(sunMesh);
+		mSun.textureId = TextureManager::Get()->LoadTexture();
+		mSun.name = "Sun";
+		mSun.scale = 2.0f;
+		mSun.rotationSpeed = 0.1f;
+		mSun.orbitRadius = 0.0f;
+		mSun.orbitSpeed = 0.0f;
+	}
+
+	// === Planets ===
+	mPlanets.resize(std::size(kPlanetData));
+	for (size_t i = 0; i < std::size(kPlanetData); ++i)
+	{
+		const PlanetData& data = kPlanetData[i];
+		CelestialBody& body = mPlanets[i];
+
+		MeshPX mesh = MeshBuilder::CreateSpherePX(32, 16, 1.0f);
+		body.meshBuffer.Initialize(mesh);
+		body.name = data.name;
+		body.textureId = TextureManager::Get()->LoadTexture(data.texture);
+		body.orbitRadius = data.orbitRadius;
+		body.orbitSpeed = data.orbitSpeed;
+		body.rotationSpeed = data.rotationSpeed;
+		body.scale = data.scale;
+		body.orbitAngle = 0.0f;
+		body.rotationAngle = 0.0f;
+		body.parentIndex = -1; // orbits the sun
+	}
+
+	// === Moon (orbits Earth, uses Pluto texture as requested) ===
+	{
+		MeshPX moonMesh = MeshBuilder::CreateSpherePX(16, 8, 1.0f);
+		mMoon.meshBuffer.Initialize(moonMesh);
+		mMoon.textureId = TextureManager::Get()->LoadTexture(pathText); // pluto texture
+		mMoon.name = "Moon";
+		mMoon.orbitRadius = 1.2f;     // distance from Earth
+		mMoon.orbitSpeed = 2.5f;      // faster than Earth's year
+		mMoon.rotationSpeed = 0.5f;
+		mMoon.scale = 0.15f;
+		mMoon.parentIndex = kEarthIndex;
+	}
 }
 
 void GameState::Terminate()
 {
+	mMoon.meshBuffer.Terminate();
+	TextureManager::Get()->ReleaseTexture(mMoon.textureId);
+
+	for (auto& planet : mPlanets)
+	{
+		planet.meshBuffer.Terminate();
+		TextureManager::Get()->ReleaseTexture(planet.textureId);
+	}
+
+	mSun.meshBuffer.Terminate();
+	TextureManager::Get()->ReleaseTexture(mSun.textureId);
+
+	mSkyMeshBuffer.Terminate();
+	TextureManager::Get()->ReleaseTexture(mSkyTextureId);
+
+	mSampler.Terminate();
+	mConstantBuffer.Terminate();
+	mPixelShader.Terminate();
+	mVertexShader.Terminate();
 }
 
 void GameState::Update(float deltaTime)
 {
+	UpdateCelestialBodies(deltaTime);
 	UpdateCamera(deltaTime);
 }
 
-enum class Shape
+void GameState::UpdateCelestialBodies(float deltaTime)
 {
-	None,
-	AABB,
-	AABBFilled,
-	Sphere,
-	GroundPlane,
-	GroundCircle,
-	Transform
-};
+	const float dt = deltaTime * mSpeedMultiplier;
 
-const char* gShapenames[] =
-{
-	"None",
-	"AABB",
-	"AABBFilled",
-	"Sphere",
-	"GroundPlane",
-	"GroundCircle",
-	"Transform"
-};
+	// Sun: only spins on its own axis, sits at origin
+	mSun.rotationAngle += mSun.rotationSpeed * dt;
+	mSun.worldPosition = Vector3::Zero;
 
-Shape gCurrentShape = Shape::None;
-Color gShapeColor = Colors::White;
-float gPlaneSize = 10.0f;
+	// Planets: orbit the sun and spin on their own axis
+	for (auto& planet : mPlanets)
+	{
+		planet.orbitAngle += planet.orbitSpeed * dt;
+		planet.rotationAngle += planet.rotationSpeed * dt;
 
+		planet.worldPosition =
+		{
+			std::cosf(planet.orbitAngle) * planet.orbitRadius,
+			0.0f,
+			std::sinf(planet.orbitAngle) * planet.orbitRadius
+		};
+	}
+
+	// Moon: orbits Earth
+	mMoon.orbitAngle += mMoon.orbitSpeed * dt;
+	mMoon.rotationAngle += mMoon.rotationSpeed * dt;
+
+	const Vector3& earthPos = mPlanets[mMoon.parentIndex].worldPosition;
+	mMoon.worldPosition =
+	{
+		earthPos.x + std::cosf(mMoon.orbitAngle) * mMoon.orbitRadius,
+		0.0f,
+		earthPos.z + std::sinf(mMoon.orbitAngle) * mMoon.orbitRadius
+	};
+}
 
 void GameState::Render()
 {
-	switch (gCurrentShape)
+	// === Sky sphere ===
+	// Render first, no depth write conflicts since it's the largest sphere
 	{
-	case Shape::None:	break;
-	case Shape::AABB:
+		mVertexShader.Bind();
+		mPixelShader.Bind();
+		mSampler.BindPS(0);
+
+		Matrix4 world = Matrix4::Translation(mCamera.GetPosition());
+		Matrix4 wvp = Transpose(world * mCamera.GetViewMatrix() * mCamera.GetProjectionMatrix());
+
+		TransformBuffer cb;
+		cb.wvp = wvp;
+		mConstantBuffer.Update(&cb);
+		mConstantBuffer.BindVS(0);
+
+		TextureManager::Get()->BindPS(mSkyTextureId, 0);
+		mSkyMeshBuffer.Render();
+	}
+
+	RenderCelestialBodies();
+	RenderOrbitRings();
+}
+
+void GameState::RenderCelestialBodies()
+{
+	mVertexShader.Bind();
+	mPixelShader.Bind();
+	mSampler.BindPS(0);
+
+	const Matrix4 viewProj = mCamera.GetViewMatrix() * mCamera.GetProjectionMatrix();
+
+	auto DrawBody = [&](const CelestialBody& body)
+		{
+			Matrix4 scale = Matrix4::Scaling(body.scale);
+			Matrix4 spin = Matrix4::RotationY(body.rotationAngle);
+			Matrix4 translation = Matrix4::Translation(body.worldPosition);
+
+			Matrix4 world = scale * spin * translation;
+			Matrix4 wvp = Transpose(world * viewProj);
+
+			TransformBuffer cb;
+			cb.wvp = wvp;
+			mConstantBuffer.Update(&cb);
+			mConstantBuffer.BindVS(0);
+
+			TextureManager::Get()->BindPS(body.textureId, 0);
+			body.meshBuffer.Render();
+		};
+
+	// Sun
+	DrawBody(mSun);
+
+	// Planets
+	for (const auto& planet : mPlanets)
 	{
-		SimpleDraw::AddAABB({ 0.0f, 0.5f, 0.0f }, { 1.0f, 1.0f, 1.0f }, gShapeColor);
+		DrawBody(planet);
 	}
-	break;
-	case Shape::AABBFilled:
+
+	// Moon
+	DrawBody(mMoon);
+}
+
+void GameState::RenderOrbitRings()
+{
+	if (!mShowOrbitRings)
 	{
-		SimpleDraw::AddFilledAABB({ 0.0f, 0.5f, 0.0f }, { 1.0f, 1.0f, 1.0f }, gShapeColor);
+		return;
 	}
-	break;
-	case Shape::Sphere:
+
+	for (const auto& planet : mPlanets)
 	{
-		SimpleDraw::AddSphere(32, 16, 1.0f, { 0.0f, 0.5f, 0.0f }, gShapeColor);
+		SimpleDraw::AddGroundCircle(64, planet.orbitRadius, Vector3::Zero, Colors::White);
 	}
-	break;
-	case Shape::GroundPlane:
-	{
-		SimpleDraw::AddGroundPlane(gPlaneSize, gShapeColor);
-	}
-	break;
-	case Shape::GroundCircle:
-	{
-		SimpleDraw::AddGroundCircle(32, gPlaneSize * 0.5f, { 0.0f, 0.0f, 0.0f }, gShapeColor);
-	}
-	break;
-	case Shape::Transform:
-	{
-		SimpleDraw::AddTransform(Math::Matrix4::Translation({ 0.0f, 0.0f, 0.0f }));
-	}
-	break;
-	default:
-		break;
-	}
+
+	// Moon's orbit ring around Earth
+	SimpleDraw::AddGroundCircle(32, mMoon.orbitRadius, mPlanets[mMoon.parentIndex].worldPosition, Colors::LightGray);
 
 	SimpleDraw::Render(mCamera);
 }
 
-// float myVariable = 0.0f;
 void GameState::DebugUI()
 {
-	ImGui::Begin("Debug", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
-	
-		ImGui::ColorEdit4("ShapeColor", &gShapeColor.r);
-		int currentShape = (int)gCurrentShape;
-		if(ImGui::Combo("Shape", &currentShape, gShapenames, std::size(gShapenames)))
-		{
-			gCurrentShape = (Shape)currentShape;
-		}
+	ImGui::Begin("Solar System", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
 
-		ImGui::DragFloat("PlaneSize", &gPlaneSize, 1.0f, 1.0f, 10000.0f);
+	ImGui::Checkbox("Show Orbit Rings", &mShowOrbitRings);
+	ImGui::DragFloat("Speed", &mSpeedMultiplier, 0.05f, 0.0f, 20.0f);
+
+	ImGui::Separator();
+
+	// Build the list of names for the combo: "Free Camera" + each planet
+	std::vector<std::string> names;
+	names.push_back("Free Camera");
+	for (const auto& planet : mPlanets)
+	{
+		names.push_back(planet.name);
+	}
+
+	std::vector<const char*> namePtrs;
+	for (const auto& n : names)
+	{
+		namePtrs.push_back(n.c_str());
+	}
+
+	int comboIndex = mSelectedPlanetIndex + 1; // shift so -1 (free cam) -> 0
+	if (ImGui::Combo("Camera Target", &comboIndex, namePtrs.data(), (int)namePtrs.size()))
+	{
+		mSelectedPlanetIndex = comboIndex - 1;
+		mFreeCamera = (mSelectedPlanetIndex == -1);
+	}
+
 	ImGui::End();
 }
 
 void GameState::UpdateCamera(float deltaTime)
 {
+	if (!mFreeCamera && mSelectedPlanetIndex >= 0 && mSelectedPlanetIndex < (int)mPlanets.size())
+	{
+		const CelestialBody& target = mPlanets[mSelectedPlanetIndex];
+
+		// Distance scales with the planet's size so it's always clearly visible
+		const float distance = target.scale * 4.0f + 1.0f;
+		Vector3 offset = { 0.0f, target.scale * 1.5f + 0.5f, -distance };
+
+		mCamera.SetPosition(target.worldPosition + offset);
+		mCamera.SetLookAt(target.worldPosition);
+		return;
+	}
+
+	// === Free-fly camera ===
 	InputSystem* input = InputSystem::Get();
 	const float moveSpeed = input->IsKeyDown(KeyCode::LSHIFT) ? 10.0f : 1.0f;
 	const float turnSpeed = 0.1f;
