@@ -58,13 +58,13 @@ void GameState::Initialize()
 	// === Sky sphere ===
 	MeshPX skyMesh = MeshBuilder::CreateSkySpherePX(32, 16, 500.0f);
 	mSkyMeshBuffer.Initialize(skyMesh);
-	mSkyTextureId = TextureManager::Get()->LoadTexture(pathText);
+	mSkyTextureId = TextureManager::Get()->LoadTexture("skysphere/blackSpace.jpg");
 
 	// === Sun ===
 	{
 		MeshPX sunMesh = MeshBuilder::CreateSpherePX(32, 16, 1.0f);
 		mSun.meshBuffer.Initialize(sunMesh);
-		mSun.textureId = TextureManager::Get()->LoadTexture();
+		mSun.textureId = TextureManager::Get()->LoadTexture("sun.jpg");
 		mSun.name = "Sun";
 		mSun.scale = 2.0f;
 		mSun.rotationSpeed = 0.1f;
