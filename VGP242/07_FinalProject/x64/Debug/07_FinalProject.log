@@ -17,4 +17,26 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
   (compiling source file 'GameState.cpp')
   
+  WinMain.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(31,59): warning C4552: '-': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(29,59): warning C4552: '+': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector3.h(30,59): warning C4552: '-': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning C4552: '+': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
+  (compiling source file 'WinMain.cpp')
+  
+  Generating Code...
+DirectXTK.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(WICTextureLoader.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
+DirectXTK.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(pch.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
   07_FinalProject.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\07_FinalProject.exe

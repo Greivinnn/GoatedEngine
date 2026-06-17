@@ -20,6 +20,8 @@ namespace
 		float scale;
 	};
 
+	// array that holds the properties of each planet
+	// this makes adding or tweaking planets easier, as we can just modify this array instead of changing code in multiple places
 	const PlanetData kPlanetData[] =
 	{
 		{ "Mercury", "planets/mercury.jpg",  4.0f, 0.80f, 0.50f, 0.30f },
@@ -33,6 +35,7 @@ namespace
 		{ "Pluto",   "planets/pluto.jpg",   30.0f, 0.08f, 0.40f, 0.20f }
 	};
 
+	// index of Earth in the kPlanetData array, used for the moon's orbit
 	constexpr int kEarthIndex = 2;
 }
 
@@ -46,6 +49,7 @@ void GameState::Initialize()
 	mConstantBuffer.Initialize(sizeof(TransformBuffer));
 	mSampler.Initialize(Sampler::Filter::Linear, Sampler::AddressMode::Wrap);
 
+	// create a sky sphere mesh using MeshBuilder 
 	MeshPX skyMesh = MeshBuilder::CreateSkySpherePX(32, 16, 500.0f);
 	mSkyMeshBuffer.Initialize(skyMesh);
 	mSkyTextureId = TextureManager::Get()->LoadTexture("skysphere/blackSpace.jpg");
@@ -56,16 +60,19 @@ void GameState::Initialize()
 		mSun.name = "Sun";
 		mSun.scale = 2.0f;
 		mSun.rotationSpeed = 0.1f;
+		// orbitRadius and orbitSpeed are set to 0 for the Sun, as it keeps it fixed at the origin
 		mSun.orbitRadius = 0.0f;
 		mSun.orbitSpeed = 0.0f;
 	}
 
+	// resize the vector to hold the planets in our array, so we can index eahc planet
 	mPlanets.resize(std::size(kPlanetData));
 	for (size_t i = 0; i < std::size(kPlanetData); ++i)
 	{
 		const PlanetData& data = kPlanetData[i];
 		CelestialBody& body = mPlanets[i];
 
+		// all planets share the same sphere mesh from MeshBuilder, the scale is applied per planet via world matrix
 		MeshPX mesh = MeshBuilder::CreateSpherePX(32, 16, 1.0f);
 		body.meshBuffer.Initialize(mesh);
 		body.name = data.name;
@@ -76,22 +83,24 @@ void GameState::Initialize()
 		body.scale = data.scale;
 		body.orbitAngle = 0.0f;
 		body.rotationAngle = 0.0f;
-		body.parentIndex = -1;
+		body.parentIndex = -1;	// -1 means no parent, only the moon has a parent (Earth), all other planets orbit the Sun (origin)
 	}
 
 	{
+		// the moon gets a different mesh than the planets, as it is smaller and has a different texture
 		MeshPX moonMesh = MeshBuilder::CreateSpherePX(16, 8, 1.0f);
 		mMoon.meshBuffer.Initialize(moonMesh);
 		mMoon.textureId = TextureManager::Get()->LoadTexture("planets/pluto.jpg"); 
 		mMoon.name = "Moon";
 		mMoon.orbitRadius = 1.2f;    
-		mMoon.orbitSpeed = 2.5f;     
+		mMoon.orbitSpeed = 2.5f;     // orbit around earth
 		mMoon.rotationSpeed = 0.5f;
 		mMoon.scale = 0.15f;
-		mMoon.parentIndex = kEarthIndex;
+		mMoon.parentIndex = kEarthIndex;	// parent index is Earth
 	}
 }
 
+// terminate everything 
 void GameState::Terminate()
 {
 	mMoon.meshBuffer.Terminate();
@@ -123,6 +132,7 @@ void GameState::Update(float deltaTime)
 
 void GameState::UpdateCelestialBodies(float deltaTime)
 {
+	// mSpeedMultiplier allows the user to chande the time forward/backward via ImGui
 	const float dt = deltaTime * mSpeedMultiplier;
 
 	mSun.rotationAngle += mSun.rotationSpeed * dt;
@@ -133,6 +143,7 @@ void GameState::UpdateCelestialBodies(float deltaTime)
 		planet.orbitAngle += planet.orbitSpeed * dt;
 		planet.rotationAngle += planet.rotationSpeed * dt;
 
+		// cirvular orbit: convert the accumalated angle to XZ world pos
 		planet.worldPosition =
 		{
 			std::cosf(planet.orbitAngle) * planet.orbitRadius,
@@ -144,6 +155,7 @@ void GameState::UpdateCelestialBodies(float deltaTime)
 	mMoon.orbitAngle += mMoon.orbitSpeed * dt;
 	mMoon.rotationAngle += mMoon.rotationSpeed * dt;
 
+	// moon is close to earth so we add the moon local orbit on top of earth world postion 
 	const Vector3& earthPos = mPlanets[mMoon.parentIndex].worldPosition;
 	mMoon.worldPosition =
 	{
@@ -182,8 +194,11 @@ void GameState::RenderCelestialBodies()
 	mPixelShader.Bind();
 	mSampler.BindPS(0);
 
+	// Computes view-projection once and reuse it for every planet
 	const Matrix4 viewProj = mCamera.GetViewMatrix() * mCamera.GetProjectionMatrix();
 
+	// lambda function that capture the share state (shader, buffer, viewProj)
+	// every planet only needs to supply its own scale, spin, and pos
 	auto DrawBody = [&](const CelestialBody& body)
 		{
 			Matrix4 scale = Matrix4::Scaling(body.scale);
@@ -267,6 +282,8 @@ void GameState::UpdateCamera(float deltaTime)
 	{
 		const CelestialBody& target = mPlanets[mSelectedPlanetIndex];
 
+		// Offset the camera behind and above the planet, scaled by the planet's size
+		// so smaller planets don't get a huge camera and larger ones don't clip
 		const float distance = target.scale * 4.0f + 1.0f;
 		Vector3 offset = { 0.0f, target.scale * 1.5f + 0.5f, -distance };
 
