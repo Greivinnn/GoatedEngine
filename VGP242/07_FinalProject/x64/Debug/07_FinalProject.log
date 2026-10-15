@@ -17,6 +17,141 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
   (compiling source file 'GameState.cpp')
   
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(57,2): error C2143: syntax error: missing ';' before '}'
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(57,2): error C2059: syntax error: '}'
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(58,1): error C2059: syntax error: '<L_GRAMMAR_end_class>'
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\App.h(4,1): error C2143: syntax error: missing ';' before '{'
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\App.h(4,1): error C2447: '{': missing function header (old-style formal list?)
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\GoatedEngine.h(8,5): error C2143: syntax error: missing ';' before '&'
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\GoatedEngine.h(8,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\GoatedEngine.h(8,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(30,40): error C2039: 'AppState': is not a member of 'GoatedEngine'
+  (compiling source file 'GameState.cpp')
+      C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(11,11):
+      see declaration of 'GoatedEngine'
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(30,40): error C2504: 'AppState': base class undefined
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(33,7): error C3668: 'GoatedEngine::Graphics::GameState::Initialize': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(34,7): error C3668: 'GoatedEngine::Graphics::GameState::Terminate': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(35,7): error C3668: 'GoatedEngine::Graphics::GameState::Update': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(36,7): error C3668: 'GoatedEngine::Graphics::GameState::Render': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(37,7): error C3668: 'GoatedEngine::Graphics::GameState::DebugUI': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'GameState.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(42,6): error C2653: 'GameState': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(44,2): error C2065: 'mCamera': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(45,2): error C2065: 'mCamera': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(47,2): error C2065: 'mVertexShader': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(47,27): error C2065: 'VertexPX': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(47,37): error C2065: 'kShaderPath': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(48,2): error C2065: 'mPixelShader': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(48,26): error C2065: 'kShaderPath': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(49,2): error C2065: 'mConstantBuffer': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(49,36): error C2065: 'TransformBuffer': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(50,2): error C2065: 'mSampler': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(50,22): error C2653: 'Sampler': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(50,39): error C2065: 'Linear': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(50,47): error C2653: 'Sampler': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(50,69): error C2065: 'Wrap': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(53,2): error C2065: 'MeshPX': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(53,9): error C2146: syntax error: missing ';' before identifier 'skyMesh'
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(53,9): error C2065: 'skyMesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(53,19): error C2653: 'MeshBuilder': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(53,32): error C3861: 'CreateSkySpherePX': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(54,2): error C2065: 'mSkyMeshBuffer': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(54,28): error C2065: 'skyMesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(55,2): error C2065: 'mSkyTextureId': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(55,18): error C2653: 'TextureManager': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(55,34): error C3861: 'Get': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(57,3): error C2065: 'MeshPX': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(57,10): error C2146: syntax error: missing ';' before identifier 'sunMesh'
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(57,10): error C2065: 'sunMesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(57,20): error C2653: 'MeshBuilder': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(57,33): error C3861: 'CreateSpherePX': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(58,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(58,30): error C2065: 'sunMesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(59,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(59,20): error C2653: 'TextureManager': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(59,36): error C3861: 'Get': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(60,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(61,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(62,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(64,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(65,3): error C2065: 'mSun': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(69,2): error C2065: 'mPlanets': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(69,28): error C2065: 'kPlanetData': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(70,35): error C2065: 'kPlanetData': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(72,3): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(72,19): error C2143: syntax error: missing ';' before '&'
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(72,21): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(72,28): error C2065: 'kPlanetData': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(73,3): error C2065: 'CelestialBody': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(73,18): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(73,25): error C2065: 'mPlanets': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(76,3): error C2065: 'MeshPX': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(76,10): error C2146: syntax error: missing ';' before identifier 'mesh'
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(76,10): error C2065: 'mesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(76,17): error C2653: 'MeshBuilder': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(76,30): error C3861: 'CreateSpherePX': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(77,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(77,30): error C2065: 'mesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(78,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(78,15): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(79,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(79,20): error C2653: 'TextureManager': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(79,36): error C3861: 'Get': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(79,55): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(80,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(80,22): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(81,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(81,21): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(82,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(82,24): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(83,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(83,16): error C2065: 'data': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(84,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(85,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(86,3): error C2065: 'body': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(91,3): error C2065: 'MeshPX': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(91,10): error C2146: syntax error: missing ';' before identifier 'moonMesh'
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(91,10): error C2065: 'moonMesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(91,21): error C2653: 'MeshBuilder': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(91,34): error C3861: 'CreateSpherePX': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(92,3): error C2065: 'mMoon': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(92,31): error C2065: 'moonMesh': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(93,3): error C2065: 'mMoon': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(93,21): error C2653: 'TextureManager': is not a class or namespace name
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(93,37): error C3861: 'Get': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(94,3): error C2065: 'mMoon': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(95,3): error C2065: 'mMoon': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(96,3): error C2065: 'mMoon': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.cpp(96,3): error C1003: error count exceeds 100; stopping compilation
   WinMain.cpp
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector2.h(30,59): warning C4552: '+': result of expression not used
   (compiling source file 'WinMain.cpp')
@@ -36,7 +171,62 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(21,59): warning
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning C4552: '-': result of expression not used
   (compiling source file 'WinMain.cpp')
   
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(57,2): error C2143: syntax error: missing ';' before '}'
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(57,2): error C2059: syntax error: '}'
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(58,1): error C2059: syntax error: '<L_GRAMMAR_end_class>'
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\App.h(4,1): error C2143: syntax error: missing ';' before '{'
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\App.h(4,1): error C2447: '{': missing function header (old-style formal list?)
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\GoatedEngine.h(8,5): error C2143: syntax error: missing ';' before '&'
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\GoatedEngine.h(8,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Engine\GoatedEngine\Inc\GoatedEngine.h(8,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(30,40): error C2039: 'AppState': is not a member of 'GoatedEngine'
+  (compiling source file 'WinMain.cpp')
+      C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\StandardEffect.h(11,11):
+      see declaration of 'GoatedEngine'
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(30,40): error C2504: 'AppState': base class undefined
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(33,7): error C3668: 'GoatedEngine::Graphics::GameState::Initialize': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(34,7): error C3668: 'GoatedEngine::Graphics::GameState::Terminate': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(35,7): error C3668: 'GoatedEngine::Graphics::GameState::Update': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(36,7): error C3668: 'GoatedEngine::Graphics::GameState::Render': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\GameState.h(37,7): error C3668: 'GoatedEngine::Graphics::GameState::DebugUI': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'WinMain.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(7,2): error C2065: 'AppConfig': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(7,12): error C2146: syntax error: missing ';' before identifier 'config'
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(7,12): error C2065: 'config': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(8,2): error C2065: 'config': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(10,2): error C2065: 'App': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(10,7): error C2065: 'myApp': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(10,15): error C3861: 'MainApp': identifier not found
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(11,2): error C2065: 'myApp': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(11,17): error C2065: 'GameState': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(12,2): error C2065: 'myApp': undeclared identifier
+C:\LASALLE SECOND YEAR\GoatedEngine\VGP242\07_FinalProject\WinMain.cpp(12,12): error C2065: 'config': undeclared identifier
   Generating Code...
-DirectXTK.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(WICTextureLoader.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
-DirectXTK.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(pch.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
-  07_FinalProject.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\07_FinalProject.exe

@@ -136,16 +136,22 @@
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\ContantBuffer.h" />
     <ClInclude Include="Inc\DebugUI.h" />
+    <ClInclude Include="Inc\DirectionalLight.h" />
     <ClInclude Include="Inc\Graphics.h" />
     <ClInclude Include="Inc\GraphicSystem.h" />
+    <ClInclude Include="Inc\Material.h" />
     <ClInclude Include="Inc\MeshBuffer.h" />
     <ClInclude Include="Inc\MeshBuilder.h" />
     <ClInclude Include="Inc\MeshType.h" />
     <ClInclude Include="Inc\PixelShader.h" />
+    <ClInclude Include="Inc\RenderObject.h" />
+    <ClInclude Include="Inc\RenderTarget.h" />
     <ClInclude Include="Inc\Sampler.h" />
     <ClInclude Include="Inc\SimpleDraw.h" />
+    <ClInclude Include="Inc\StandardEffect.h" />
     <ClInclude Include="Inc\Texture.h" />
     <ClInclude Include="Inc\TextureManager.h" />
+    <ClInclude Include="Inc\Transform.h" />
     <ClInclude Include="Inc\VertexShader.h" />
     <ClInclude Include="Inc\VertexTypes.h" />
     <ClInclude Include="Scr\Precompiled.h" />
@@ -161,8 +167,11 @@
     <ClCompile Include="Scr\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Scr\RenderObject.cpp" />
+    <ClCompile Include="Scr\RenderTarget.cpp" />
     <ClCompile Include="Scr\Sampler.cpp" />
     <ClCompile Include="Scr\SimpleDraw.cpp" />
+    <ClCompile Include="Scr\StandardEffect.cpp" />
     <ClCompile Include="Scr\Texture.cpp" />
     <ClCompile Include="Scr\TextureManager.cpp" />
     <ClCompile Include="Scr\VertexShader.cpp" />
