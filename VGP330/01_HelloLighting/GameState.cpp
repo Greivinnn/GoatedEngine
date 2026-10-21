@@ -24,6 +24,12 @@ void GameState::Initialize()
 	mRenderObject.specMapId = tm->LoadTexture("earth_spec.jpg");
 	mRenderObject.normMapId = tm->LoadTexture("earth_normal.jpg");
 	mRenderObject.bumpMapId = tm->LoadTexture("earth_bump.jpg");
+	
+	// set up render ball
+	Mesh meshBall = MeshBuilder::CreateSphere(30, 30, 0.5f);
+	mRenderBall.meshBuffer.Initialize(meshBall);
+	TextureManager* tmBall = TextureManager::Get();
+
 
 	// set up the effect 
 	std::filesystem::path shaderPath = L"../../Assets/Shaders/Standard.fx";

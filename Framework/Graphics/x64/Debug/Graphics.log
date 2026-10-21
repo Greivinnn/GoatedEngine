@@ -1,14 +1,5 @@
-﻿  RenderObject.cpp
-  RenderTarget.cpp
-  StandardEffect.cpp
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(87,59): error C2572: 'GoatedEngine::Graphics::RenderTarget::BeginRender': redefinition of default argument: parameter 1
-  (compiling source file '/Scr/RenderTarget.cpp')
-      C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Inc\RenderTarget.h(24,8):
-      see declaration of 'GoatedEngine::Graphics::RenderTarget::BeginRender'
-  
+﻿  RenderTarget.cpp
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(98,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Scr/RenderTarget.cpp')
   
-  Texture.cpp
-  TextureManager.cpp
-  Generating Code...
+  Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib

@@ -84,7 +84,7 @@ void RenderTarget::Terminate()
 	SafeRealease(mRenderTargetView);
 }
 	 
-void RenderTarget::BeginRender(Color clearColor = Colors::Black)
+void RenderTarget::BeginRender(Color clearColor)
 {
 	auto context = GraphicSystem::Get()->GetContext();
 

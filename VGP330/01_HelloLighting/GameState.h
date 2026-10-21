@@ -19,5 +19,9 @@ private:
 	GoatedEngine::Graphics::StandardEffect mStandardEffectCel;
 
 	GoatedEngine::Graphics::RenderObject mRenderObject;
+	GoatedEngine::Graphics::RenderObject mRenderBall;
+	GoatedEngine::Graphics::RenderObject mRenderPlane;
+
+
 	bool mUseCellShading = false;
 };
