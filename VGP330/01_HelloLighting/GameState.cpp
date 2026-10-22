@@ -25,12 +25,6 @@ void GameState::Initialize()
 	mRenderObject.normMapId = tm->LoadTexture("earth_normal.jpg");
 	mRenderObject.bumpMapId = tm->LoadTexture("earth_bump.jpg");
 	
-	// set up render ball
-	Mesh meshBall = MeshBuilder::CreateSphere(30, 30, 0.5f);
-	mRenderBall.meshBuffer.Initialize(meshBall);
-	TextureManager* tmBall = TextureManager::Get();
-
-
 	// set up the effect 
 	std::filesystem::path shaderPath = L"../../Assets/Shaders/Standard.fx";
 	mStandardEffect.Initialize(shaderPath);
@@ -42,6 +36,27 @@ void GameState::Initialize()
 	mStandardEffectCel.Initialize(shaderPath);
 	mStandardEffectCel.SetCamera(mCamera);
 	mStandardEffectCel.SetDirectionalLight(mDirectionalLight);
+
+
+	// set up render ball
+	Mesh meshBall = MeshBuilder::CreateSphere(30, 30, 0.5f);
+	mRenderBall.meshBuffer.Initialize(meshBall);
+	TextureManager* tmBall = TextureManager::Get();
+	mRenderBall.diffuseMapId = tmBall->LoadTexture("wood_diffuse.jpg");
+	mRenderBall.specMapId = tmBall->LoadTexture("wood_specular.jpg");
+	mRenderBall.normMapId = tmBall->LoadTexture("wood_normal.jpg");
+	mRenderBall.bumpMapId = tmBall->LoadTexture("wood_bump.jpg");
+	mRenderBall.transform.position = { 2.0f, 0.0f, 0.0f };
+	
+	// set up render plane
+	Mesh meshPlane = MeshBuilder::CreatePlane(3, 3, 1.0f);
+	mRenderPlane.meshBuffer.Initialize(meshPlane);
+	TextureManager* tmPlane = TextureManager::Get();
+	mRenderPlane.diffuseMapId = tmPlane->LoadTexture("brick_diffuse.jpg");
+	mRenderPlane.specMapId = tmPlane->LoadTexture("brick_specular.jpg");
+	mRenderPlane.normMapId = tmPlane->LoadTexture("brick_normal.jpg");
+	mRenderPlane.bumpMapId = tmPlane->LoadTexture("brick_specular.jpg");
+	mRenderPlane.transform.position = { -3.0f, 0.0f, 0.0f };
 }
 
 void GameState::Terminate()
@@ -49,6 +64,8 @@ void GameState::Terminate()
 	mStandardEffectCel.Terminate();
 	mStandardEffect.Terminate();
 	mRenderObject.Terminate();
+	mRenderBall.Terminate();
+	mRenderPlane.Terminate();
 }
 
 void GameState::Update(float deltaTime)
@@ -65,12 +82,16 @@ void GameState::Render()
 	{
 		mStandardEffectCel.Begin();
 			mStandardEffectCel.Render(mRenderObject);
+			mStandardEffectCel.Render(mRenderBall);
+			mStandardEffectCel.Render(mRenderPlane);
 		mStandardEffectCel.End();
 	}
 	else
 	{
 		mStandardEffect.Begin();
 			mStandardEffect.Render(mRenderObject);
+			mStandardEffect.Render(mRenderBall);
+			mStandardEffect.Render(mRenderPlane);
 		mStandardEffect.End();
 	}
 }
