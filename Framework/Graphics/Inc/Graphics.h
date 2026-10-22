@@ -21,3 +21,5 @@
 #include "DirectionalLight.h"
 #include "StandardEffect.h"
 #include "RenderTarget.h"
+#include "Model.h"
+#include "ModelIO.h"

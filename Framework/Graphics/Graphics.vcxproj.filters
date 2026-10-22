@@ -81,6 +81,12 @@
     <ClInclude Include="Inc\RenderTarget.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Model.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\ModelIO.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\Precompiled.cpp">
@@ -129,6 +135,9 @@
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\RenderTarget.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\ModelIO.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,2 @@
-﻿  RenderTarget.cpp
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(98,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
-  (compiling source file '/Scr/RenderTarget.cpp')
-  
+﻿  ModelIO.cpp
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib
