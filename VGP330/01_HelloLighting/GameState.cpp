@@ -37,7 +37,11 @@ void GameState::Initialize()
 	mStandardEffectCel.SetCamera(mCamera);
 	mStandardEffectCel.SetDirectionalLight(mDirectionalLight);
 
+	// initialize render target
+	const uint32_t size = 512;
+	mRenderTarget.Initialize(size, size, RenderTarget::Format::RGBA_U32);
 
+	// Created in assignment 1
 	// set up render ball
 	Mesh meshBall = MeshBuilder::CreateSphere(30, 30, 0.5f);
 	mRenderBall.meshBuffer.Initialize(meshBall);
@@ -56,14 +60,16 @@ void GameState::Initialize()
 	mRenderPlane.specMapId = tmPlane->LoadTexture("brick_specular.jpg");
 	mRenderPlane.normMapId = tmPlane->LoadTexture("brick_normal.jpg");
 	mRenderPlane.bumpMapId = tmPlane->LoadTexture("brick_specular.jpg");
-	mRenderPlane.transform.position = { -3.0f, 0.0f, 0.0f };
+	mRenderPlane.transform.position = { -3.0f, 0.0f, 0.0f };	
 }
 
 void GameState::Terminate()
 {
+	mRenderTarget.Terminate();
 	mStandardEffectCel.Terminate();
 	mStandardEffect.Terminate();
 	mRenderObject.Terminate();
+	//Created in assignment 1
 	mRenderBall.Terminate();
 	mRenderPlane.Terminate();
 }
@@ -82,6 +88,7 @@ void GameState::Render()
 	{
 		mStandardEffectCel.Begin();
 			mStandardEffectCel.Render(mRenderObject);
+			// Created in assingment 1
 			mStandardEffectCel.Render(mRenderBall);
 			mStandardEffectCel.Render(mRenderPlane);
 		mStandardEffectCel.End();
@@ -90,10 +97,17 @@ void GameState::Render()
 	{
 		mStandardEffect.Begin();
 			mStandardEffect.Render(mRenderObject);
+			// Created in assignment 1
 			mStandardEffect.Render(mRenderBall);
 			mStandardEffect.Render(mRenderPlane);
 		mStandardEffect.End();
 	}
+	// render target render
+	mRenderTarget.BeginRender();
+		mStandardEffect.Begin();
+			mStandardEffect.Render(mRenderObject);
+		mStandardEffect.End();
+	mRenderTarget.EndRender();
 }
 
 void GameState::DebugUI()
@@ -117,6 +131,13 @@ void GameState::DebugUI()
 		ImGui::ColorEdit4("Shininess##Material", &mRenderObject.material.specular.r);
 		ImGui::DragFloat("Shininess##Material", &mRenderObject.material.shininess, 0.01f, 0.0f, 1000.0f);
 	}
+	ImGui::Image(
+		mRenderTarget.GetRawData(),
+		{ 128, 128 },
+		{ 0, 0 },
+		{ 1, 1 },
+		{ 1, 1, 1, 1 },
+		{ 1, 1, 1, 1 });
 	ImGui::Checkbox("UseCelShader", &mUseCellShading);
 	if (mUseCellShading)
 	{

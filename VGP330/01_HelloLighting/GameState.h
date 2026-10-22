@@ -17,8 +17,11 @@ private:
 	GoatedEngine::Graphics::DirectionalLight mDirectionalLight;
 	GoatedEngine::Graphics::StandardEffect mStandardEffect;
 	GoatedEngine::Graphics::StandardEffect mStandardEffectCel;
+	GoatedEngine::Graphics::RenderTarget mRenderTarget;
 
 	GoatedEngine::Graphics::RenderObject mRenderObject;
+
+	// added in assignment 1 
 	GoatedEngine::Graphics::RenderObject mRenderBall;
 	GoatedEngine::Graphics::RenderObject mRenderPlane;
 

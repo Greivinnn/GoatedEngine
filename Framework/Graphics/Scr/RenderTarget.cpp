@@ -51,20 +51,20 @@ void RenderTarget::Initialize(uint32_t width, uint32_t height, Format format)
 	ASSERT(SUCCEEDED(hr), "RenderTarget: failed to create texture");
 
 	hr = device->CreateShaderResourceView(texture, nullptr, &mShaderResourceView);
-	ASSERT((hr), "RenderTarget: failed to create shader resource view");
+	ASSERT(SUCCEEDED(hr), "RenderTarget: failed to create shader resource view");
 
 	hr = device->CreateRenderTargetView(texture, nullptr, &mRenderTargetView);
-	ASSERT((hr), "TargetView: failed to create render target view");
+	ASSERT(SUCCEEDED(hr), "TargetView: failed to create render target view");
 
 	SafeRealease(texture);
 
 	desc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
 	desc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
 	hr = device->CreateTexture2D(&desc, nullptr, &texture);
-	ASSERT((hr), "RenderTarget: failed to create depth stencil texture");
+	ASSERT(SUCCEEDED(hr), "RenderTarget: failed to create depth stencil texture");
 
 	hr = device->CreateDepthStencilView(texture, nullptr, &mDepthStencilView);
-	ASSERT((hr), "RenderTarget: failed tp create depth stencil view");
+	ASSERT(SUCCEEDED(hr), "RenderTarget: failed tp create depth stencil view");
 
 	SafeRealease(texture);
 
