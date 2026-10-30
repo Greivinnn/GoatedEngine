@@ -1,2 +1,5 @@
-﻿  ModelIO.cpp
+﻿  ModelManager.cpp
+  RenderObject.cpp
+  StandardEffect.cpp
+  Generating Code...
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib

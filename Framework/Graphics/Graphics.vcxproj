@@ -145,6 +145,7 @@
     <ClInclude Include="Inc\MeshType.h" />
     <ClInclude Include="Inc\Model.h" />
     <ClInclude Include="Inc\ModelIO.h" />
+    <ClInclude Include="Inc\ModelManager.h" />
     <ClInclude Include="Inc\PixelShader.h" />
     <ClInclude Include="Inc\RenderObject.h" />
     <ClInclude Include="Inc\RenderTarget.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="Scr\MeshBuffer.cpp" />
     <ClCompile Include="Scr\MeshBuilder.cpp" />
     <ClCompile Include="Scr\ModelIO.cpp" />
+    <ClCompile Include="Scr\ModelManager.cpp" />
     <ClCompile Include="Scr\PixelShader.cpp" />
     <ClCompile Include="Scr\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

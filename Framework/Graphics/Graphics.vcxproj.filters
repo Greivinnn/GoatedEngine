@@ -87,6 +87,9 @@
     <ClInclude Include="Inc\ModelIO.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\ModelManager.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\Precompiled.cpp">
@@ -138,6 +141,9 @@
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\ModelIO.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\ModelManager.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
   </ItemGroup>

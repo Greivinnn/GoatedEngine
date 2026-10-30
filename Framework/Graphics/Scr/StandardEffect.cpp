@@ -79,6 +79,42 @@ void StandardEffect::Render(const RenderObject& renderObject)
 
 	renderObject.meshBuffer.Render();
 }
+
+void StandardEffect::Render(const RenderGroup& renderGroup)
+{
+	const Math::Matrix4 matWorld = renderGroup.transform.GetMatrix();
+	const Math::Matrix4 matView = mCamera->GetViewMatrix();
+	const Math::Matrix4 matProj = mCamera->GetProjectionMatrix();
+	const Math::Matrix4 matFinal = matWorld * matView * matProj;
+
+	TransformData data;
+	data.wvp = Math::Transpose(matFinal);
+	data.world = Math::Transpose(matWorld);
+	data.viewPosition + mCamera->GetPosition();
+	mTransformBuffer.Update(data);
+	mLightBuffer.Update(*mDirectionLight);
+
+	TextureManager* tm = TextureManager::Get();
+	SettingsData settings;
+	for (const RenderObject& renderObject : renderGroup.renderObjects)
+	{
+		mMaterialBuffer.Update(renderObject.material);
+		settings.useDiffuseMap = (mSettingsData.useDiffuseMap > 0 && renderObject.diffuseMapId > 0) ? 1 : 0;
+		settings.useSpecMap = (mSettingsData.useSpecMap > 0 && renderObject.specMapId > 0) ? 1 : 0;
+		settings.useNormMap = (mSettingsData.useNormMap > 0 && renderObject.normMapId > 0) ? 1 : 0;
+		settings.useBumpMap = (mSettingsData.useBumpMap > 0 && renderObject.bumpMapId > 0) ? 1 : 0;
+		settings.bumpWeight = mSettingsData.bumpWeight;
+		mSettingBuffer.Update(settings);
+
+		tm->BindPS(renderObject.diffuseMapId, 0);
+		tm->BindPS(renderObject.specMapId, 1);
+		tm->BindPS(renderObject.normMapId, 2);
+		tm->BindVS(renderObject.bumpMapId, 3);
+
+		renderObject.meshBuffer.Render();
+	}
+}
+
 void StandardEffect::DebugUI()
 {
 	if (ImGui::CollapsingHeader("StandardEffect", ImGuiTreeNodeFlags_DefaultOpen))
