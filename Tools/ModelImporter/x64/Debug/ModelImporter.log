@@ -18,6 +18,8 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning
   (compiling source file 'main.cpp')
   
 C:\LASALLE SECOND YEAR\GoatedEngine\Tools\ModelImporter\main.cpp(34,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\LASALLE SECOND YEAR\GoatedEngine\Tools\ModelImporter\main.cpp(113,4): warning C4018: '<': signed/unsigned mismatch
+  LINK : C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\ModelImporter.exe not found or not built by the last incremental link; performing full link
   ModelImporter.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\ModelImporter.exe
   C:\LASALLE SECOND YEAR\GoatedEngine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
   C:\LASALLE SECOND YEAR\GoatedEngine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll

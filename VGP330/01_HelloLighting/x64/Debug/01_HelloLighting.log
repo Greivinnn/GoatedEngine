@@ -37,4 +37,7 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Math\Inc\Vector4.h(22,59): warning
   (compiling source file 'WinMain.cpp')
   
   Generating Code...
+  LINK : C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\01_HelloLighting.exe not found or not built by the last incremental link; performing full link
+DirectXTK.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(WICTextureLoader.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
+DirectXTK.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(pch.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
   01_HelloLighting.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\01_HelloLighting.exe

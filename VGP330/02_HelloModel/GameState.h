@@ -17,5 +17,7 @@ private:
 	GoatedEngine::Graphics::DirectionalLight mDirectionalLight;
 	GoatedEngine::Graphics::StandardEffect mStandardEffect;
 	GoatedEngine::Graphics::RenderGroup mCharacter;
+	GoatedEngine::Graphics::RenderGroup mCharacter2;
+	GoatedEngine::Graphics::RenderGroup mCharacter3;
 
 };

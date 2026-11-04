@@ -1,0 +1,1 @@
+   -scale 0.01 C:\path\to\GoatedEngine\Assets\Models\CharacterTwo\Name.fbx C:\path\to\GoatedEngine\Assets\Models\CharacterTwo\Name.model

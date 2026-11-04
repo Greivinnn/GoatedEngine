@@ -58,7 +58,7 @@ void StandardEffect::Render(const RenderObject& renderObject)
 	TransformData data;
 	data.wvp = Math::Transpose(matFinal);
 	data.world = Math::Transpose(matWorld);
-	data.viewPosition + mCamera->GetPosition();
+	data.viewPosition = mCamera->GetPosition();
 	mTransformBuffer.Update(data);
 	mLightBuffer.Update(*mDirectionLight);
 	mMaterialBuffer.Update(renderObject.material);
@@ -90,7 +90,7 @@ void StandardEffect::Render(const RenderGroup& renderGroup)
 	TransformData data;
 	data.wvp = Math::Transpose(matFinal);
 	data.world = Math::Transpose(matWorld);
-	data.viewPosition + mCamera->GetPosition();
+	data.viewPosition = mCamera->GetPosition();
 	mTransformBuffer.Update(data);
 	mLightBuffer.Update(*mDirectionLight);
 

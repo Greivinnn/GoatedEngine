@@ -39,7 +39,7 @@ void RenderGroup::Initialize(const Model& model)
 		renderObject.meshBuffer.Initialize(meshData.mesh);
 		if (meshData.materialIndex < model.materialData.size())
 		{
-			const Model::MaterialData& materialData = model.meshData[meshData.materialIndex];
+			const Model::MaterialData& materialData = model.materialData[meshData.materialIndex];
 			renderObject.material = materialData.material;
 
 			renderObject.diffuseMapId = TryLoadTexture(materialData.diffuseName);

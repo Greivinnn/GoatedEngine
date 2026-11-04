@@ -24,12 +24,20 @@ void GameState::Initialize()
 	mStandardEffect.Initialize(shaderPath);
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
+
+	// assignment additional characters
+	mCharacter2.Initialize(L"CharacterTwo/FredoModel.model");
+	mCharacter3.Initialize(L"CharacterThree/JPModel.model");
+	mCharacter2.transform.position = { -1.5f, 0.0f, 0.0f };
+	mCharacter3.transform.position = { 1.5f, 0.0f, 0.0f };
 }
 
 void GameState::Terminate()
 {
 	mCharacter.Terminate();
 	mStandardEffect.Terminate();
+	mCharacter2.Terminate();
+	mCharacter3.Terminate();
 }
 
 void GameState::Update(float deltaTime)
@@ -46,6 +54,13 @@ void GameState::Render()
 			mStandardEffect.Render(mCharacter);
 		mStandardEffect.End();
 
+		mStandardEffect.Begin();
+			mStandardEffect.Render(mCharacter2);
+		mStandardEffect.End();
+
+		mStandardEffect.Begin();
+			mStandardEffect.Render(mCharacter3);
+		mStandardEffect.End();
 }
 
 void GameState::DebugUI()

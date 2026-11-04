@@ -1,5 +1,12 @@
-﻿  ModelManager.cpp
+﻿  ModelIO.cpp
+  ModelManager.cpp
   RenderObject.cpp
+  RenderTarget.cpp
   StandardEffect.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(98,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
+  (compiling source file '/Scr/RenderTarget.cpp')
+  
+  Texture.cpp
+  TextureManager.cpp
   Generating Code...
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib

@@ -252,7 +252,7 @@ int main(int argc, char* argv[])
 
 			aiMaterial->Get(AI_MATKEY_COLOR_EMISSIVE, emissive);
 			aiMaterial->Get(AI_MATKEY_COLOR_AMBIENT, ambient);
-			aiMaterial->Get(AI_MATKEY_COLOR_DIFFUSE, difftime);
+			aiMaterial->Get(AI_MATKEY_COLOR_DIFFUSE, diffuse);
 			aiMaterial->Get(AI_MATKEY_COLOR_SPECULAR, specular);
 			aiMaterial->Get(AI_MATKEY_SHININESS, specualrPower);
 
@@ -272,11 +272,11 @@ int main(int argc, char* argv[])
 
 	// save all of the data
 	printf("Saving Model...\n");
-
 	ModelIO::SaveModel(args.outputFileName, model);
 
+	printf("Saving Material...\n");
+	ModelIO::SaveMaterial(args.outputFileName, model);
+
 	printf("Import Complete\n");
-
-
 	return 0;
 }
