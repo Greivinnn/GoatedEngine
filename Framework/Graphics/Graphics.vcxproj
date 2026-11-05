@@ -147,6 +147,7 @@
     <ClInclude Include="Inc\ModelIO.h" />
     <ClInclude Include="Inc\ModelManager.h" />
     <ClInclude Include="Inc\PixelShader.h" />
+    <ClInclude Include="Inc\PostProcessingEffect.h" />
     <ClInclude Include="Inc\RenderObject.h" />
     <ClInclude Include="Inc\RenderTarget.h" />
     <ClInclude Include="Inc\Sampler.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Scr\ModelIO.cpp" />
     <ClCompile Include="Scr\ModelManager.cpp" />
     <ClCompile Include="Scr\PixelShader.cpp" />
+    <ClCompile Include="Scr\PostProcessingEffect.cpp" />
     <ClCompile Include="Scr\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>

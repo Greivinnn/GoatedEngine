@@ -33,5 +33,7 @@ namespace GoatedEngine::Graphics
 
 		// skt sphere
 		static MeshPX CreateSkySpherePX(int slices, int rings, float radius);
+
+		static MeshPX CreateScreenQuadPX();
 	};
 }

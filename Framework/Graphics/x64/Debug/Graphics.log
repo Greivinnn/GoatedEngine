@@ -1,12 +1,26 @@
-﻿  ModelIO.cpp
-  ModelManager.cpp
-  RenderObject.cpp
-  RenderTarget.cpp
-  StandardEffect.cpp
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(98,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
-  (compiling source file '/Scr/RenderTarget.cpp')
+﻿  MeshBuilder.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(240,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
   
-  Texture.cpp
-  TextureManager.cpp
-  Generating Code...
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(240,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(267,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(267,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(301,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(301,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(356,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(367,29): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib
