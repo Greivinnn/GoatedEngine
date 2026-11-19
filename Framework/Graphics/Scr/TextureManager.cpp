@@ -29,7 +29,7 @@ TextureManager* TextureManager::Get()
 
 TextureManager::~TextureManager()
 {
-	ASSERT(mInventory.empty(), "TextureManager: no all textures are cleared");
+	ASSERT(mInventory.empty(), "TextureManager: not all textures are cleared");
 }
 
 void TextureManager::SetRootDirectory(const std::filesystem::path& root)

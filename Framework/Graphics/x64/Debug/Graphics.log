@@ -23,4 +23,11 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(356,2
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(367,29): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Scr/MeshBuilder.cpp')
   
+  PostProcessingEffect.cpp
+  RenderTarget.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(98,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
+  (compiling source file '/Scr/RenderTarget.cpp')
+  
+  TextureManager.cpp
+  Generating Code...
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib

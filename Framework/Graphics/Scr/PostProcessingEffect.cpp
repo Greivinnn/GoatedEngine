@@ -4,6 +4,7 @@
 #include "RenderObject.h"
 #include "Texture.h"
 #include "VertexTypes.h"
+#include "GraphicSystem.h"
 
 using namespace GoatedEngine;
 using namespace GoatedEngine::Graphics;
@@ -29,7 +30,7 @@ void PostProcessingEffect::Initialize(const std::filesystem::path& filePath)
 {
 	mVertexShader.Initialize<VertexPX>(filePath);
 	mPixelShader.Initialize(filePath);
-	mSampler.Initialize(Sampler::Filter::Point, Sampler::AddressMode::Wrap);
+	mSampler.Initialize(Sampler::Filter::Linear, Sampler::AddressMode::Wrap);
 	mPostProcessingBuffer.Initialize();
 }
 
@@ -57,6 +58,37 @@ void PostProcessingEffect::Begin()
 
 	PostProcessingData data;
 	data.mode = static_cast<int>(mMode);
+
+	// push the mode-specific debug UI values into the shader params
+	switch (mMode)
+	{
+	case Mode::Mirror:
+		data.param0 = mMirrorScaleX;
+		data.param1 = mMirrorScaleY;
+		break;
+	case Mode::Blur:
+	case Mode::MotionBlur:
+	{
+		// convert pixel strength to UV offset so blur looks the same at any resolution
+		GraphicSystem* gs = GraphicSystem::Get();
+		data.param0 = mBlurStrength / static_cast<float>(gs->GetBackBufferWidth());
+		data.param1 = mBlurStrength / static_cast<float>(gs->GetBackBufferHeight());
+		break;
+	}
+	case Mode::Combine2:
+		data.param0 = mCombine2Alpha;
+		break;
+	case Mode::ChromaticAberration:
+		data.param0 = mAberrationValue;
+		data.param1 = mAberrationValue;
+		break;
+	case Mode::Wave:
+		data.param0 = mWaveLength;
+		data.param1 = mNumWaves;
+		break;
+	default:
+		break;
+	}
 
 	mPostProcessingBuffer.Update(data);
 	mPostProcessingBuffer.BindPS(0);

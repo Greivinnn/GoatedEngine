@@ -102,7 +102,7 @@ void RenderTarget::BeginRender(Color clearColor)
 void RenderTarget::EndRender()
 {
 	auto context = GraphicSystem::Get()->GetContext();
-	context->OMSetRenderTargets(1, &mOldRenderTargetView, mDepthStencilView);
+	context->OMSetRenderTargets(1, &mOldRenderTargetView, mOldDepthStencilView);
 	context->RSSetViewports(1, &mOldViewport);
 
 	SafeRealease(mOldDepthStencilView);

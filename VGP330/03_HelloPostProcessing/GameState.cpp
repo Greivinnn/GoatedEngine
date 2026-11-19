@@ -74,10 +74,10 @@ void GameState::Update(float deltaTime)
 
 void GameState::Render()
 {
-	SimpleDraw::AddGroundPlane(20.0f, Colors::LightGray);
-	SimpleDraw::Render(mCamera);
-
 	mRenderTarget.BeginRender();
+		// debug lines go INTO the render target, otherwise the screen quad paints over them
+		SimpleDraw::AddGroundPlane(20.0f, Colors::LightGray);
+		SimpleDraw::Render(mCamera);
 		mStandardEffect.Begin();
 			mStandardEffect.Render(mCharacter);
 			mStandardEffect.Render(mCharacter2);

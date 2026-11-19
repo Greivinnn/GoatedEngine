@@ -51,5 +51,52 @@ float4 PS(VS_OUTPUT input) : SV_Target
         float4 color = textureMap0.Sample(textureSampler, input.texCoord);
         finalColor = 1.0f - color;
     }
+    else if (mode == 3) // mirror (param0 = scaleX, param1 = scaleY, -1 flips, wrap sampler handles the rest)
+    {
+        float2 texCoord = input.texCoord * float2(param0, param1);
+        finalColor = textureMap0.Sample(textureSampler, texCoord);
+    }
+    else if (mode == 4) // blur: 3x3 box (param0/param1 = uv offset per tap)
+    {
+        float u = input.texCoord.x;
+        float v = input.texCoord.y;
+        finalColor =
+              textureMap0.Sample(textureSampler, float2(u, v))
+            + textureMap0.Sample(textureSampler, float2(u - param0, v))
+            + textureMap0.Sample(textureSampler, float2(u + param0, v))
+            + textureMap0.Sample(textureSampler, float2(u, v - param1))
+            + textureMap0.Sample(textureSampler, float2(u, v + param1))
+            + textureMap0.Sample(textureSampler, float2(u - param0, v - param1))
+            + textureMap0.Sample(textureSampler, float2(u + param0, v - param1))
+            + textureMap0.Sample(textureSampler, float2(u - param0, v + param1))
+            + textureMap0.Sample(textureSampler, float2(u + param0, v + param1));
+        finalColor /= 9.0f; // average, not add, or the image blows out to white
+    }
+    else if (mode == 5) // combine2: lerp texture1 over texture0 (param0 = extra alpha)
+    {
+        float4 color0 = textureMap0.Sample(textureSampler, input.texCoord);
+        float4 color1 = textureMap1.Sample(textureSampler, input.texCoord);
+        float alpha = saturate(color1.a + param0);
+        finalColor = lerp(color0, color1, alpha);
+    }
+    else if (mode == 6) // motion blur: not covered in class yet, passthrough
+    {
+        finalColor = textureMap0.Sample(textureSampler, input.texCoord);
+    }
+    else if (mode == 7) // chromatic aberration (param0/param1 = channel offset strength)
+    {
+        float2 distortion = float2(param0, -param1);
+        float4 redChannel   = textureMap0.Sample(textureSampler, input.texCoord + distortion.x * input.texCoord);
+        float4 greenChannel = textureMap0.Sample(textureSampler, input.texCoord);
+        float4 blueChannel  = textureMap0.Sample(textureSampler, input.texCoord + distortion.y * input.texCoord);
+        finalColor = float4(redChannel.r, greenChannel.g, blueChannel.b, 1.0f);
+    }
+    else if (mode == 8) // wave (param0 = amplitude in uv, param1 = number of waves across the screen)
+    {
+        float waveValue = input.texCoord.x * (3.14159f * param1);
+        float2 texCoord = input.texCoord;
+        texCoord.y += sin(waveValue) * param0;
+        finalColor = textureMap0.Sample(textureSampler, texCoord);
+    }
     return finalColor;
 }
