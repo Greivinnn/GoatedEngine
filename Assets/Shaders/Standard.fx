@@ -4,6 +4,7 @@ cbuffer TransformBuffer : register(b0)
 {
     matrix wvp;
     matrix world;
+    matrix lwvp;    // light world view projection (shadows)
     float3 viewPosition;
 }
 
@@ -30,7 +31,9 @@ cbuffer SettingsBuffer : register(b3)
     bool useSpecMap;
     bool useNormMap;
     bool useBumpMap;
+    bool useShadowMap;
     float bumpWeight;
+    float depthBias;
 }
 
 SamplerState textureSampler : register(s0);
@@ -39,6 +42,7 @@ Texture2D diffuseMap : register(t0);
 Texture2D specMap : register(t1);
 Texture2D normMap : register(t2);
 Texture2D bumpMap : register(t3);
+Texture2D shadowMap : register(t4);
 
 struct VS_INPUT
 {
@@ -56,6 +60,7 @@ struct VS_OUTPUT
     float2 texCoord : TEXCOORD0;
     float3 dirToLight : TEXCOORD1;
     float3 dirToView : TEXCOORD2;
+    float4 lightNDCPosition : TEXCOORD3;
 };
 
 VS_OUTPUT VS(VS_INPUT input)
@@ -77,6 +82,12 @@ VS_OUTPUT VS(VS_INPUT input)
 
     float4 worldPos = mul(float4(localPosition, 1.0f), world);
     output.dirToView = normalize(viewPosition - worldPos.xyz);
+
+    output.lightNDCPosition = 0.0f;
+    if (useShadowMap)
+    {
+        output.lightNDCPosition = mul(float4(localPosition, 1.0f), lwvp);
+    }
 
     return output;
 }
@@ -116,6 +127,24 @@ float4 PS(VS_OUTPUT input) : SV_Target
     float4 diffuseColor = (useDiffuseMap)? diffuseMap.Sample(textureSampler, input.texCoord) : 1.0f;
     float4 specularColor = (useSpecMap) ? specMap.Sample(textureSampler, input.texCoord).r : 1.0f;
     float4 finalColor = (emissive + ambient + diffuse) * diffuseColor + (specular);
+
+    // shadows
+    if (useShadowMap)
+    {
+        float actualDepth = 1.0f - (input.lightNDCPosition.z / input.lightNDCPosition.w);
+        float2 shadowUV = input.lightNDCPosition.xy / input.lightNDCPosition.w;
+        float u = (shadowUV.x + 1.0f) * 0.5f;
+        float v = 1.0f - (shadowUV.y + 1.0f) * 0.5f;
+        if (saturate(u) == u && saturate(v) == v)
+        {
+            float savedDepth = shadowMap.Sample(textureSampler, float2(u, v)).r;
+            if (savedDepth > actualDepth + depthBias)
+            {
+                // something closer to the light is blocking us, drop diffuse + specular
+                finalColor = (emissive + ambient) * diffuseColor;
+            }
+        }
+    }
     return finalColor;
 }
 

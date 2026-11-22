@@ -13,6 +13,7 @@ namespace
 		{
 		case RenderTarget::Format::RGBA_U8: return DXGI_FORMAT_R8G8B8A8_UNORM;
 		case RenderTarget::Format::RGBA_U32: return DXGI_FORMAT_R32G32B32A32_UINT;
+		case RenderTarget::Format::RGBA_F32: return DXGI_FORMAT_R32G32B32A32_FLOAT;
 		default:
 			ASSERT(false, "RenderTarget: unsupported format");
 			break;

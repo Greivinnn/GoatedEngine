@@ -13,6 +13,7 @@ namespace GoatedEngine::Graphics
 	class Camera;
 	class RenderObject;
 	class RenderGroup;
+	class Texture;
 
 
 	class StandardEffect final
@@ -31,11 +32,14 @@ namespace GoatedEngine::Graphics
 
 		void SetDirectionalLight(const DirectionalLight& directionalLight);
 		void SetCamera(const Camera& camera);
+		void SetLightCamera(const Camera& lightCamera);
+		void SetShadowMap(const Texture& shadowMap);
 	private:
 		struct TransformData
 		{
 			Math::Matrix4 wvp;	// world view projection matrix for ndc space
 			Math::Matrix4 world;	// world location
+			Math::Matrix4 lwvp;		// light world view projection (shadows)
 			Math::Vector3 viewPosition;	// position of camera
 			float padding = 0.0f;	// added 
 		};
@@ -46,8 +50,10 @@ namespace GoatedEngine::Graphics
 			int useSpecMap = 1; 
 			int useNormMap = 1;
 			int useBumpMap = 1;
+			int useShadowMap = 1;
 			float bumpWeight = 0.1f;
-			float padding[3] = { 0.0f };
+			float depthBias = 0.00003f;
+			float padding = 0.0f;
 		};
 
 		using TransformBuffer = TypedConstantBuffer<TransformData>;
@@ -68,6 +74,8 @@ namespace GoatedEngine::Graphics
 
 		const Camera* mCamera = nullptr;
 		const DirectionalLight* mDirectionLight = nullptr;
+		const Camera* mLightCamera = nullptr;
+		const Texture* mShadowMap = nullptr;
 
 		SettingsData mSettingsData;
 

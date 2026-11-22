@@ -11,7 +11,8 @@ namespace GoatedEngine::Graphics
 		enum class Format
 		{
 			RGBA_U8,
-			RGBA_U32
+			RGBA_U32,
+			RGBA_F32	// float format, use this for anything a shader samples as float (shadow depth map)
 		};
 
 		RenderTarget() = default;

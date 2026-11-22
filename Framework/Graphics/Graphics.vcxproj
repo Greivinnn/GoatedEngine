@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Inc\BlendState.h" />
     <ClInclude Include="Inc\Camera.h" />
     <ClInclude Include="Inc\Color.h" />
     <ClInclude Include="Inc\Common.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Inc\RenderObject.h" />
     <ClInclude Include="Inc\RenderTarget.h" />
     <ClInclude Include="Inc\Sampler.h" />
+    <ClInclude Include="Inc\ShadowEffect.h" />
     <ClInclude Include="Inc\SimpleDraw.h" />
     <ClInclude Include="Inc\StandardEffect.h" />
     <ClInclude Include="Inc\Texture.h" />
@@ -161,6 +163,7 @@
     <ClInclude Include="Scr\Precompiled.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scr\BlendState.cpp" />
     <ClCompile Include="Scr\Camera.cpp" />
     <ClCompile Include="Scr\ContantBuffer.cpp" />
     <ClCompile Include="Scr\DebugUI.cpp" />
@@ -177,6 +180,7 @@
     <ClCompile Include="Scr\RenderObject.cpp" />
     <ClCompile Include="Scr\RenderTarget.cpp" />
     <ClCompile Include="Scr\Sampler.cpp" />
+    <ClCompile Include="Scr\ShadowEffect.cpp" />
     <ClCompile Include="Scr\SimpleDraw.cpp" />
     <ClCompile Include="Scr\StandardEffect.cpp" />
     <ClCompile Include="Scr\Texture.cpp" />

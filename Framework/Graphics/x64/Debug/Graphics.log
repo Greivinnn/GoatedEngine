@@ -1,33 +1,9 @@
-﻿  MeshBuilder.cpp
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(240,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(240,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(267,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(267,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(301,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(301,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(356,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(367,29): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-  (compiling source file '/Scr/MeshBuilder.cpp')
-  
-  PostProcessingEffect.cpp
+﻿  BlendState.cpp
   RenderTarget.cpp
-C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(98,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
+  ShadowEffect.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(99,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Scr/RenderTarget.cpp')
   
-  TextureManager.cpp
+  StandardEffect.cpp
   Generating Code...
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib

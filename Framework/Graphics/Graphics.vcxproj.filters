@@ -93,6 +93,12 @@
     <ClInclude Include="Inc\PostProcessingEffect.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\ShadowEffect.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\BlendState.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Scr\Precompiled.cpp">
@@ -150,6 +156,12 @@
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\PostProcessingEffect.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\ShadowEffect.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\BlendState.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
   </ItemGroup>
