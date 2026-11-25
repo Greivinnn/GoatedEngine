@@ -18,6 +18,7 @@ void MeshBuffer::Initialize(const void* vertices, uint32_t vertexSize, uint32_t 
 }
 void MeshBuffer::Terminate()
 {
+	SafeRealease(mIndexBuffer);
 	SafeRealease(mVertexBuffer);
 }
 

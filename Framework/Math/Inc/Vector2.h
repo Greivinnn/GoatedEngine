@@ -27,8 +27,8 @@ namespace GoatedEngine::Math
 		constexpr Vector2 operator*(float s) const { return { x * s, y * s }; }
 		constexpr Vector2 operator/(float s) const { return { x / s, y / s }; }
 
-		constexpr Vector2& operator += (const Vector2& rhs) { x + rhs.x; y += rhs.y; return *this; }
-		constexpr Vector2& operator -= (const Vector2& rhs) { x - rhs.x; y -= rhs.y; return *this; }
+		constexpr Vector2& operator += (const Vector2& rhs) { x += rhs.x; y += rhs.y; return *this; }
+		constexpr Vector2& operator -= (const Vector2& rhs) { x -= rhs.x; y -= rhs.y; return *this; }
 		constexpr Vector2& operator *= (float s) { x *= s; y *= s; return *this; }
 		constexpr Vector2& operator /= (float s) { x /= s; y /= s; return *this; }
 	};

@@ -1,9 +1,50 @@
-﻿  BlendState.cpp
+﻿  Precompiled.cpp
+  BlendState.cpp
+  Camera.cpp
+  ContantBuffer.cpp
+  DebugUI.cpp
+  GraphicSystem.cpp
+  MeshBuffer.cpp
+  MeshBuilder.cpp
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(240,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(240,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(267,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(267,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(301,58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(301,18): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(356,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\MeshBuilder.cpp(367,29): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Scr/MeshBuilder.cpp')
+  
+  ModelIO.cpp
+  ModelManager.cpp
+  PixelShader.cpp
+  PostProcessingEffect.cpp
+  RenderObject.cpp
   RenderTarget.cpp
-  ShadowEffect.cpp
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(99,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Scr/RenderTarget.cpp')
   
+  Sampler.cpp
+  ShadowEffect.cpp
+  SimpleDraw.cpp
   StandardEffect.cpp
+  Texture.cpp
+  TextureManager.cpp
+  VertexShader.cpp
   Generating Code...
   Graphics.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\Graphics.lib

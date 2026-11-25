@@ -18,8 +18,8 @@ namespace GoatedEngine::Math
 		constexpr Vector4 operator*(float s) const { return { x * s, y * s, z * s, w * s }; }
 		constexpr Vector4 operator/(float s) const { return { x / s, y / s, z / s, w / s }; }
 
-		constexpr Vector4& operator += (const Vector4& rhs) { x + rhs.x; y += rhs.y; z += rhs.z; w += rhs.w; return *this; }
-		constexpr Vector4& operator -= (const Vector4& rhs) { x - rhs.x; y -= rhs.y; z -= rhs.z; w -= rhs.w; return *this; }
+		constexpr Vector4& operator += (const Vector4& rhs) { x += rhs.x; y += rhs.y; z += rhs.z; w += rhs.w; return *this; }
+		constexpr Vector4& operator -= (const Vector4& rhs) { x -= rhs.x; y -= rhs.y; z -= rhs.z; w -= rhs.w; return *this; }
 		constexpr Vector4& operator *= (float s) { x *= s; y *= s; z *= s; w *= s; return *this; }
 		constexpr Vector4& operator /= (float s) { x /= s; y /= s; z /= s; w /= s; return *this; }
 	};

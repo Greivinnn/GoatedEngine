@@ -93,7 +93,7 @@ void GraphicSystem::Initialize(HWND window, bool fullscreen)
 	ASSERT(SUCCEEDED(hr), "[GraphicSystem] Failed to create device and swap chain!");
 	mSwapChain->GetDesc(&mSwapChainDesc);
 
-	Resize(GetBackBufferHeight(), GetBackBufferHeight());
+	Resize(GetBackBufferWidth(), GetBackBufferHeight());
 
 	sWindowMessageHandler.Hook(window, GraphicSystemMessageHandle);	
 }
@@ -202,7 +202,7 @@ void GraphicSystem::SetClearColor(const Color& color)
 }
 void GraphicSystem::SetVSync(bool vSync)
 {
-	mVsync = mVsync ? 1 : 0;
+	mVsync = vSync ? 1 : 0;
 }
 
 uint32_t GraphicSystem::GetBackBufferWidth() const
