@@ -1,6 +1,4 @@
 ﻿  GameState.cpp
   WinMain.cpp
   Generating Code...
-DirectXTK.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(WICTextureLoader.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
-DirectXTK.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTK.lib(pch.obj)' or at 'C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\DirectXTK.pdb'; linking object as if no debug info
   04_HelloShadow.vcxproj -> C:\LASALLE SECOND YEAR\GoatedEngine\x64\Debug\04_HelloShadow.exe

@@ -96,6 +96,12 @@
     <ClInclude Include="Inc\ShadowEffect.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Terrain.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\TerrainEffect.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
     <ClInclude Include="Inc\BlendState.h">
       <Filter>Inc</Filter>
     </ClInclude>
@@ -159,6 +165,12 @@
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\ShadowEffect.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\Terrain.cpp">
+      <Filter>Scr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scr\TerrainEffect.cpp">
       <Filter>Scr</Filter>
     </ClCompile>
     <ClCompile Include="Scr\BlendState.cpp">

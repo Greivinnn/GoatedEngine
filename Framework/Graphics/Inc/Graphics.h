@@ -27,3 +27,5 @@
 #include "PostProcessingEffect.h"
 #include "ShadowEffect.h"
 #include "BlendState.h"
+#include "Terrain.h"
+#include "TerrainEffect.h"

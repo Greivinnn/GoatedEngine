@@ -14,6 +14,8 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderObject.cpp;C:\L
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\RenderTarget.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Sampler.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Sampler.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\ShadowEffect.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\ShadowEffect.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Terrain.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Terrain.obj
+C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\TerrainEffect.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\TerrainEffect.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\SimpleDraw.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\SimpleDraw.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\StandardEffect.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\StandardEffect.obj
 C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\Texture.cpp;C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\x64\Debug\Texture.obj

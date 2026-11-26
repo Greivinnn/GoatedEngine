@@ -41,9 +41,13 @@ C:\LASALLE SECOND YEAR\GoatedEngine\Framework\Graphics\Scr\RenderTarget.cpp(99,7
   
   Sampler.cpp
   ShadowEffect.cpp
+  Terrain.cpp
+  TerrainEffect.cpp
   SimpleDraw.cpp
   StandardEffect.cpp
   Texture.cpp
+  Generating Code...
+  Compiling...
   TextureManager.cpp
   VertexShader.cpp
   Generating Code...
